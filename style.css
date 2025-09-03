@@ -937,6 +937,19 @@ a:hover {
     justify-content: center;
 }
 
+/* Fix for CTA buttons on white background */
+.cta-card .btn-secondary {
+    background: transparent;
+    color: var(--heart-red);
+    border: 2px solid var(--heart-red);
+}
+
+.cta-card .btn-secondary:hover {
+    background: var(--heart-red);
+    color: white;
+    border-color: var(--heart-red);
+}
+
 /* Footer */
 .footer {
     background: var(--bg-dark);
