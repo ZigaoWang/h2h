@@ -185,24 +185,53 @@ a:hover {
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-lg);
+    transition: all 0.2s ease;
+}
+
+.logo:hover {
+    background: var(--heart-red-subtle);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-standard);
 }
 
 .logo-icon {
-    font-size: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--heart-red-light), var(--bg-white));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-subtle);
+}
+
+.logo-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .logo-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--heart-red);
     margin: 0;
     font-weight: 700;
+    letter-spacing: -0.025em;
+    text-shadow: 0 1px 2px rgba(198, 40, 40, 0.1);
 }
 
 .logo-text .subtitle {
     font-size: 0.875rem;
-    color: var(--text-muted);
-    font-weight: 400;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 .nav-menu {
@@ -976,7 +1005,22 @@ a:hover {
 }
 
 .footer-logo .logo-icon {
-    font-size: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 0;
+}
+
+.footer-logo .logo-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: brightness(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .footer-logo h3 {
@@ -1254,7 +1298,8 @@ a:hover {
     }
     
     .logo-icon {
-        font-size: 1.25rem;
+        width: 2rem;
+        height: 2rem;
     }
     
     .logo-text h1 {
