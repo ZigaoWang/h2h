@@ -186,15 +186,6 @@ a:hover {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-lg);
-    transition: all 0.2s ease;
-}
-
-.logo:hover {
-    background: var(--heart-red-subtle);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-standard);
 }
 
 .logo-icon {
@@ -203,17 +194,16 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--heart-red-light), var(--bg-white));
+    background: var(--bg-white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-subtle);
     border: 1px solid var(--border-subtle);
 }
 
 .logo-icon img {
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
     object-fit: contain;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .logo-text h1 {
@@ -222,7 +212,6 @@ a:hover {
     margin: 0;
     font-weight: 700;
     letter-spacing: -0.025em;
-    text-shadow: 0 1px 2px rgba(198, 40, 40, 0.1);
 }
 
 .logo-text .subtitle {
@@ -230,7 +219,6 @@ a:hover {
     color: var(--text-secondary);
     font-weight: 500;
     letter-spacing: 0.025em;
-    text-transform: uppercase;
     margin: 0;
 }
 
@@ -1005,22 +993,21 @@ a:hover {
 }
 
 .footer-logo .logo-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: var(--bg-white);
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-right: 0;
 }
 
 .footer-logo .logo-icon img {
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
     object-fit: contain;
-    filter: brightness(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .footer-logo h3 {
