@@ -123,22 +123,24 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 100;
-    /* Ensure header doesn't break on mobile */
-    min-height: 60px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.header-top {
-    background: var(--bg-neutral);
-    border-bottom: 1px solid var(--border-subtle);
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+.main-nav {
+    padding: var(--space-4) 0;
 }
 
-.header-top-content {
+.nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-2) 0;
+    gap: var(--space-6);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
 }
 
 .language-toggle {
@@ -155,6 +157,7 @@ a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition);
+    color: var(--text-secondary);
 }
 
 .lang-btn.active,
@@ -164,33 +167,15 @@ a:hover {
     border-color: var(--heart-red);
 }
 
-.contact-info {
-    display: flex;
-    gap: var(--space-8);
-    font-size: 0.875rem;
-    /* Prevent contact info from wrapping awkwardly */
-    flex-wrap: wrap;
-}
-
-.main-nav {
-    padding: var(--space-5) 0;
-}
-
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-3);
 }
 
 .logo-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,19 +192,16 @@ a:hover {
 }
 
 .logo-text h1 {
-    font-size: 1.75rem;
-    color: var(--heart-red);
     margin: 0;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.025em;
+    color: var(--text-primary);
 }
 
 .logo-text .subtitle {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    font-weight: 500;
-    letter-spacing: 0.025em;
-    margin: 0;
+    font-weight: 400;
 }
 
 .nav-menu {
@@ -839,136 +821,143 @@ a:hover {
 
 /* Contact Section */
 .contact {
-    padding: var(--space-24) 0;
-    background: var(--bg-neutral);
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--space-16) 0;
+}
+
+.contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.contact-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.45);
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.65) 100%);
+    z-index: -1;
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: var(--space-16);
-    align-items: start;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto var(--space-8) auto;
+    padding: 0 var(--space-6);
 }
 
-.info-section h3 {
-    color: var(--heart-red);
+.contact-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-5);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: white;
+}
+
+.contact-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    opacity: 0.95;
+    line-height: 1.5;
+    font-weight: 400;
+    color: white;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-message-wrapper {
+    background: rgba(255, 255, 255, 0.96);
+    padding: var(--space-8) var(--space-8);
+    border-radius: var(--radius-md);
+    max-width: 550px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-message {
+    font-size: 1.25rem;
+    font-weight: 400;
     margin-bottom: var(--space-8);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.contact-email-section {
+    margin-top: var(--space-6);
+}
+
+.contact-text {
+    font-size: 0.875rem;
+    margin-bottom: var(--space-3);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+.contact-email-link {
+    display: inline-block;
     font-size: 1.375rem;
     font-weight: 600;
-}
-
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-}
-
-.contact-method {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-6);
-    background: var(--bg-white);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-subtle);
-    border: 1px solid var(--border-subtle);
-}
-
-.method-icon {
-    font-size: 1.25rem;
-    background: var(--heart-red-light);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.method-info h4 {
-    color: var(--text-primary);
-    margin-bottom: var(--space-1);
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.method-info p {
-    color: var(--text-secondary);
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-.next-steps {
-    margin-top: var(--space-8);
-}
-
-.next-steps h3 {
     color: var(--heart-red);
-    margin-bottom: var(--space-5);
-    font-size: 1.125rem;
-    font-weight: 600;
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    border-bottom: 2px solid var(--heart-red);
 }
 
-.next-steps ul {
-    list-style: none;
-}
-
-.next-steps li {
-    padding: var(--space-4);
-    background: var(--bg-white);
-    border-radius: var(--radius-sm);
-    margin-bottom: var(--space-3);
-    border-left: 3px solid var(--heart-red);
-    font-size: 0.95rem;
-}
-
-.contact-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-card {
-    background: var(--bg-white);
-    padding: var(--space-10);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-elevated);
-    border: 1px solid var(--border-subtle);
-    max-width: 460px;
-}
-
-.cta-card h3 {
-    color: var(--text-primary);
-    margin-bottom: var(--space-4);
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.cta-card p {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-8);
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: var(--space-3);
-    justify-content: center;
-}
-
-/* Fix for CTA buttons on white background */
-.cta-card .btn-secondary {
+.copy-email-btn {
     background: transparent;
-    color: var(--heart-red);
-    border: 2px solid var(--heart-red);
+    border: 1px solid var(--border-standard);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cta-card .btn-secondary:hover {
-    background: var(--heart-red);
-    color: white;
+.copy-email-btn:hover {
+    background: var(--bg-neutral);
     border-color: var(--heart-red);
+    color: var(--heart-red);
+}
+
+.response-note {
+    font-size: 0.875rem;
+    margin-top: var(--space-5);
+    color: var(--text-secondary);
 }
 
 /* Footer */
@@ -1118,7 +1107,32 @@ a:hover {
     .hero-content {
         padding: var(--space-12) 0;
     }
-    
+
+    .contact {
+        min-height: 65vh;
+    }
+
+    .contact-title {
+        font-size: 2.75rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-12);
+    }
+
+    .contact-message {
+        font-size: 1.375rem;
+    }
+
+    .contact-email-link {
+        font-size: 1.25rem;
+    }
+
+    .contact-message-wrapper {
+        padding: var(--space-10) var(--space-8);
+    }
+
     .section-title {
         font-size: 2rem;
     }
@@ -1233,19 +1247,35 @@ a:hover {
     .grid-item.large {
         grid-row: span 1;
     }
-    
+
     /* Better contact section */
-    .contact-method {
-        flex-direction: row;
-        text-align: left;
-        padding: var(--space-4);
+    .contact {
+        min-height: 60vh;
+        padding: var(--space-16) 0;
     }
-    
-    .method-icon {
-        width: 40px;
-        height: 40px;
+
+    .contact-title {
+        font-size: 2.25rem;
+        margin-bottom: var(--space-6);
     }
-    
+
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--space-10);
+    }
+
+    .contact-message {
+        font-size: 1.25rem;
+    }
+
+    .contact-email-link {
+        font-size: 1.125rem;
+    }
+
+    .contact-message-wrapper {
+        padding: var(--space-8) var(--space-6);
+    }
+
     /* Footer improvements */
     .footer-content {
         grid-template-columns: 1fr;
@@ -1436,21 +1466,45 @@ a:hover {
     .support-amount {
         font-size: 1.5rem;
     }
-    
-    /* Very compact contact methods */
-    .contact-method {
-        flex-direction: column;
-        text-align: center;
-        padding: var(--space-4);
-        gap: var(--space-3);
+
+    /* Compact contact section */
+    .contact {
+        min-height: 55vh;
+        padding: var(--space-12) 0;
     }
-    
-    .method-icon {
-        width: 36px;
-        height: 36px;
-        margin: 0 auto;
+
+    .contact-title {
+        font-size: 1.875rem;
+        margin-bottom: var(--space-5);
     }
-    
+
+    .contact-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: var(--space-8);
+        padding: 0 var(--space-2);
+    }
+
+    .contact-message {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-8);
+    }
+
+    .contact-email-link {
+        font-size: 1rem;
+    }
+
+    .contact-message-wrapper {
+        padding: var(--space-6) var(--space-5);
+    }
+
+    .contact-text {
+        font-size: 0.9rem;
+    }
+
+    .response-note {
+        font-size: 0.85rem;
+    }
+
     /* Compact CTA card */
     .cta-card {
         padding: var(--space-8);

@@ -297,4 +297,19 @@ const mobileCSS = `
     </style>
 `;
 
+// Copy email function
+function copyEmail() {
+    const email = 'contact@h2h.ykps.net';
+    navigator.clipboard.writeText(email).then(() => {
+        const btn = document.querySelector('.copy-email-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        btn.style.color = '#22c55e';
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.color = '';
+        }, 2000);
+    });
+}
+
 document.head.insertAdjacentHTML('beforeend', mobileCSS);

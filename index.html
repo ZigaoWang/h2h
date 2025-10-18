@@ -13,20 +13,6 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="language-toggle">
-                        <button class="lang-btn active" data-lang="en">English</button>
-                        <button class="lang-btn" data-lang="zh">中文</button>
-                    </div>
-                    <div class="contact-info">
-                        <span>📧 contact@example.com</span>
-                        <span>📱 +1 234 567 8900</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav class="main-nav">
             <div class="container">
                 <div class="nav-content">
@@ -44,6 +30,12 @@
                         <li><a href="#stories" data-en="Stories" data-zh="故事">Stories</a></li>
                         <li><a href="#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
                     </ul>
+                    <div class="header-right">
+                        <div class="language-toggle">
+                            <button class="lang-btn active" data-lang="en">EN</button>
+                            <button class="lang-btn" data-lang="zh">中文</button>
+                        </div>
+                    </div>
                     <button class="mobile-menu-toggle">
                         <span></span>
                         <span></span>
@@ -355,51 +347,31 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
+            <div class="contact-background">
+                <img src="images/contact.jpg" alt="Heart to Heart - Make an Impact" />
+                <div class="contact-overlay"></div>
+            </div>
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-en="Join Our Mission" data-zh="加入我们的使命">Join Our Mission</h2>
-                    <p class="section-subtitle" data-en="Every contribution, no matter the size, brings us closer to saving another child's life" data-zh="每一份贡献，无论大小，都让我们更接近拯救另一个孩子的生命">Every contribution, no matter the size, brings us closer to saving another child's life</p>
-                </div>
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="info-section">
-                            <h3 data-en="Get Involved" data-zh="参与其中">Get Involved</h3>
-                            <div class="contact-methods">
-                                <div class="contact-method">
-                                    <div class="method-icon">📧</div>
-                                    <div class="method-info">
-                                        <h4 data-en="Email Us" data-zh="给我们发邮件">Email Us</h4>
-                                        <p>contact@example.com</p>
-                                    </div>
-                                </div>
-                                <div class="contact-method">
-                                    <div class="method-icon">🌐</div>
-                                    <div class="method-info">
-                                        <h4 data-en="Follow Our Work" data-zh="关注我们的工作">Follow Our Work</h4>
-                                        <p>www.example.com</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <h2 class="contact-title" data-en="Join Our Mission" data-zh="加入我们的使命">Join Our Mission</h2>
+                    <p class="contact-subtitle" data-en="Every contribution, no matter the size, brings us closer to saving another child's life" data-zh="每一份贡献，无论大小，都让我们更接近拯救另一个孩子的生命">Every contribution, no matter the size, brings us closer to saving another child's life</p>
+                </div>
+                <div class="contact-message-wrapper">
+                    <p class="contact-message" data-en="Thank you for taking the first step toward making a lasting impact." data-zh="感谢您迈出第一步，创造持久的影响。">
+                        Thank you for taking the first step toward making a lasting impact.
+                    </p>
+                    <div class="contact-email-section">
+                        <p class="contact-text" data-en="Contact us" data-zh="联系我们">Contact us</p>
+                        <div class="email-container">
+                            <a href="mailto:contact@h2h.ykps.net" class="contact-email-link">contact@h2h.ykps.net</a>
+                            <button class="copy-email-btn" onclick="copyEmail()" title="Copy email">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
                         </div>
-                        <div class="next-steps">
-                            <h3 data-en="Next Steps" data-zh="下一步">Next Steps</h3>
-                            <ul>
-                                <li data-en="Join our next charity event planning committee" data-zh="加入我们的下一个慈善活动策划委员会">Join our next charity event planning committee</li>
-                                <li data-en="Volunteer at upcoming fundraising activities" data-zh="在即将到来的筹款活动中做志愿者">Volunteer at upcoming fundraising activities</li>
-                                <li data-en="Spread awareness in your community" data-zh="在你的社区中传播意识">Spread awareness in your community</li>
-                                <li data-en="Connect us with potential partners" data-zh="将我们与潜在合作伙伴联系起来">Connect us with potential partners</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-cta">
-                        <div class="cta-card">
-                            <h3 data-en="Ready to Make a Difference?" data-zh="准备好产生影响了吗？">Ready to Make a Difference?</h3>
-                            <p data-en="Your support can help save a child's life. Join us in our mission to give every child a healthy heart and a bright future." data-zh="您的支持可以帮助拯救孩子的生命。加入我们的使命，为每个孩子提供健康的心脏和光明的未来。">Your support can help save a child's life. Join us in our mission to give every child a healthy heart and a bright future.</p>
-                            <div class="cta-buttons">
-                                <button class="btn-primary" data-en="Get Involved" data-zh="参与其中">Get Involved</button>
-                                <button class="btn-secondary" data-en="Learn More" data-zh="了解更多">Learn More</button>
-                            </div>
-                        </div>
+                        <p class="response-note" data-en="We will respond as soon as possible" data-zh="我们将尽快回复">We will respond as soon as possible</p>
                     </div>
                 </div>
             </div>
