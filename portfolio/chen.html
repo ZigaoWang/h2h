@@ -9,44 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/logo.png">
-    <style>
-        body { background: #fafafa; }
-        .dossier-container { max-width: 1100px; margin: 100px auto 80px; padding: 0 40px; }
-        .dossier-layout { display: grid; grid-template-columns: 380px 1fr; gap: 50px; align-items: start; }
-        .dossier-left { position: sticky; top: 100px; }
-        .patient-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .patient-header { margin-bottom: 40px; }
-        .patient-name { font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin: 0; }
-        .info-section { background: white; border: 1px solid #e5e5e5; margin-bottom: 20px; }
-        .info-header { background: #2c3e50; color: white; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; }
-        .info-table { border-collapse: collapse; width: 100%; }
-        .info-table tr { border-bottom: 1px solid #f0f0f0; }
-        .info-table tr:last-child { border-bottom: none; }
-        .info-table td { padding: 14px 20px; font-size: 0.95rem; }
-        .info-table td:first-child { color: #666; font-weight: 500; width: 140px; }
-        .info-table td:last-child { color: #1a1a1a; }
-        .status-badge { display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
-        .status-completed { background: #d4edda; color: #155724; }
-        .story-section { background: white; border: 1px solid #e5e5e5; padding: 40px; margin-bottom: 20px; }
-        .story-title { font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #e74c3c; }
-        .story-section p { line-height: 1.75; color: #444; margin-bottom: 18px; font-size: 1rem; }
-        .story-section p:last-child { margin-bottom: 0; }
-        .donation-log { margin-top: 20px; }
-        .donation-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
-        .donation-item:last-child { border-bottom: none; }
-        .donation-date { color: #666; font-size: 0.9rem; }
-        .donation-amount { font-weight: 600; color: #e74c3c; }
-        .total-raised { background: #fff3cd; padding: 16px 20px; border-radius: 4px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
-        .total-label { font-weight: 600; color: #856404; }
-        .total-amount { font-size: 1.5rem; font-weight: 700; color: #e74c3c; }
-        .donation-note { font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.5; }
-        @media (max-width: 900px) {
-            .dossier-layout { grid-template-columns: 1fr; gap: 30px; }
-            .dossier-left { position: relative; top: 0; }
-        }
-    </style>
 </head>
-<body>
+<body class="dossier-page">
     <header class="header">
         <nav class="main-nav">
             <div class="container">
@@ -135,15 +99,15 @@
 
                 <div class="info-section">
                     <div class="info-header" data-en="Donation Summary" data-zh="捐款摘要">Donation Summary</div>
-                    <div style="padding: 20px;">
+                    <div class="info-section-body">
                         <div class="donation-log">
                             <div class="donation-item">
-                                <span class="donation-date" data-en="November 13, 2024 · Child Sponsorship #0005955" data-zh="2024年11月13日 · 儿童资助 #0005955">November 13, 2024 · Child Sponsorship #0005955</span>
-                                <span class="donation-amount" data-en="¥10,000" data-zh="¥10,000">¥10,000</span>
+                                <span class="donation-date" data-en="November 13, 2024 · Donation from Charity Sale" data-zh="2024年11月13日 · 慈善义卖捐款">November 13, 2024 · YKPS H2H Club – Donation from Charity Sale</span>
+                                <span class="donation-amount" data-en="¥10,000.00" data-zh="¥10,000.00">¥10,000.00</span>
                             </div>
                             <div class="donation-item">
-                                <span class="donation-date" data-en="April 14, 2025 · Child Sponsorship #0005949" data-zh="2025年4月14日 · 儿童资助 #0005949">April 14, 2025 · Child Sponsorship #0005949</span>
-                                <span class="donation-amount" data-en="¥20,000" data-zh="¥20,000">¥20,000</span>
+                                <span class="donation-date" data-en="April 14, 2025 · Donation from Charity Sale &amp; Run4Hope" data-zh="2025年4月14日 · 慈善义卖及Run4Hope捐款">April 14, 2025 · YKPS H2H Club – Donation from Charity Sale &amp; Run4Hope</span>
+                                <span class="donation-amount" data-en="¥20,000.00" data-zh="¥20,000.00">¥20,000.00</span>
                             </div>
                         </div>
                         <div class="total-raised">

@@ -398,6 +398,241 @@ a:hover {
     display: block;
 }
 
+/* Portfolio Dossier Pages */
+body.dossier-page {
+    background: var(--bg-neutral);
+}
+
+.dossier-container {
+    max-width: 1100px;
+    margin: var(--space-24) auto var(--space-20);
+    padding: 0 var(--space-8);
+}
+
+.dossier-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.dossier-left {
+    position: sticky;
+    top: 110px;
+}
+
+.patient-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-standard);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-white);
+}
+
+.patient-header {
+    margin-bottom: var(--space-8);
+}
+
+.patient-name {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.info-section {
+    background: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    margin-bottom: var(--space-6);
+}
+
+.info-section-body {
+    padding: var(--space-5);
+}
+
+.info-header {
+    background: linear-gradient(135deg, var(--heart-red) 0%, var(--heart-red-dark) 100%);
+    color: white;
+    padding: var(--space-3) var(--space-5);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: var(--space-4) var(--space-5);
+    font-size: 0.975rem;
+}
+
+.info-table td:first-child {
+    color: var(--text-muted);
+    font-weight: 600;
+    width: 160px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+}
+
+.info-table td:last-child {
+    color: var(--text-primary);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--heart-red-light);
+    color: var(--heart-red-dark);
+}
+
+.story-section {
+    background: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-10);
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-subtle);
+}
+
+.story-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 3px solid var(--heart-red);
+}
+
+.story-section p {
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+}
+
+.story-section p:last-child {
+    margin-bottom: 0;
+}
+
+.donation-log {
+    margin-top: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.donation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.donation-item:last-child {
+    border-bottom: none;
+}
+
+.donation-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.donation-amount {
+    font-weight: 700;
+    color: var(--heart-red);
+    font-size: 1rem;
+}
+
+.total-raised {
+    background: var(--heart-red-subtle);
+    padding: var(--space-5) var(--space-5);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(198, 40, 40, 0.15);
+}
+
+.total-label {
+    font-weight: 600;
+    color: var(--heart-red-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.95rem;
+}
+
+.total-amount {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--heart-red);
+}
+
+@media (max-width: 960px) {
+    .dossier-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .dossier-left {
+        position: relative;
+        top: 0;
+    }
+
+    .patient-name {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .dossier-container {
+        margin-top: var(--space-16);
+        padding: 0 var(--space-4);
+    }
+
+    .story-section {
+        padding: var(--space-6);
+    }
+
+    .info-table td {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .donation-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .total-raised {
+        flex-direction: column;
+        gap: var(--space-2);
+        align-items: flex-start;
+    }
+}
+
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
