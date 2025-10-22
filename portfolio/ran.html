@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiao Ran · 2013 - Heart to Heart</title>
+    <title>Xiao Ran - Heart to Heart</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
         .patient-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .patient-header { margin-bottom: 40px; }
         .patient-name { font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin: 0 0 8px 0; }
-        .patient-id { font-size: 0.9rem; color: #888; letter-spacing: 0.5px; text-transform: uppercase; }
         .info-section { background: white; border: 1px solid #e5e5e5; margin-bottom: 20px; }
         .info-header { background: #2c3e50; color: white; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; }
         .info-table { border-collapse: collapse; width: 100%; }
@@ -26,10 +25,19 @@
         .info-table td { padding: 14px 20px; font-size: 0.95rem; }
         .info-table td:first-child { color: #666; font-weight: 500; width: 140px; }
         .info-table td:last-child { color: #1a1a1a; }
+        .status-badge { display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+        .status-completed { background: #d4edda; color: #155724; }
         .story-section { background: white; border: 1px solid #e5e5e5; padding: 40px; margin-bottom: 20px; }
         .story-title { font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #e74c3c; }
         .story-section p { line-height: 1.75; color: #444; margin-bottom: 18px; font-size: 1rem; }
-        .story-section p:last-child { margin-bottom: 0; }
+        .donation-log { margin-top: 20px; }
+        .donation-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .donation-item:last-child { border-bottom: none; }
+        .donation-date { color: #666; font-size: 0.9rem; }
+        .donation-amount { font-weight: 600; color: #e74c3c; }
+        .total-raised { background: #fff3cd; padding: 16px 20px; border-radius: 4px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .total-label { font-weight: 600; color: #856404; }
+        .total-amount { font-size: 1.5rem; font-weight: 700; color: #e74c3c; }
         @media (max-width: 900px) {
             .dossier-layout { grid-template-columns: 1fr; gap: 30px; }
             .dossier-left { position: relative; top: 0; }
@@ -41,18 +49,19 @@
         <nav class="main-nav">
             <div class="container">
                 <div class="nav-content">
-                    <div class="logo">
+                    <a href="../index.html" class="logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h1 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h1>
                             <span class="subtitle" data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <ul class="nav-menu">
                         <li><a href="../index.html#about" data-en="About Us" data-zh="关于我们">About Us</a></li>
                         <li><a href="../index.html#impact" data-en="Our Impact" data-zh="我们的影响">Our Impact</a></li>
                         <li><a href="../index.html#events" data-en="Events" data-zh="活动">Events</a></li>
                         <li><a href="../index.html#portfolio" data-en="Portfolio" data-zh="档案">Portfolio</a></li>
+                        <li><a href="../index.html#stories" data-en="Stories" data-zh="故事">Stories</a></li>
                         <li><a href="../index.html#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
                     </ul>
                     <div class="header-right">
@@ -61,6 +70,11 @@
                             <button class="lang-btn" data-lang="zh">中文</button>
                         </div>
                     </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -74,8 +88,7 @@
 
             <div class="dossier-right">
                 <div class="patient-header">
-                    <h1 class="patient-name" data-en="Xiao Ran · 2013" data-zh="小冉 · 2013">Xiao Ran · 2013</h1>
-                    <p class="patient-id" data-en="Patient Dossier #003" data-zh="患者档案 #003">Patient Dossier #003</p>
+                    <h1 class="patient-name" data-en="Xiao Ran" data-zh="小冉">Xiao Ran</h1>
                 </div>
 
                 <div class="info-section">
@@ -105,41 +118,42 @@
                     <table class="info-table">
                         <tr>
                             <td data-en="Hospital" data-zh="医院">Hospital</td>
-                            <td data-en="Guizhou Provincial People's Hospital" data-zh="贵州省人民医院">Guizhou Provincial People's Hospital</td>
+                            <td data-en="Shanghai Yida Hospital" data-zh="上海伊达医院">Shanghai Yida Hospital</td>
                         </tr>
                         <tr>
                             <td data-en="Surgery Date" data-zh="手术日期">Surgery Date</td>
-                            <td data-en="January 2025" data-zh="2025年1月">January 2025</td>
-                        </tr>
-                        <tr>
-                            <td data-en="Donation" data-zh="捐款金额">Donation</td>
-                            <td>¥30,000</td>
+                            <td data-en="August 26, 2025" data-zh="2025年8月26日">August 26, 2025</td>
                         </tr>
                         <tr>
                             <td data-en="Status" data-zh="状态">Status</td>
-                            <td data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</td>
+                            <td><span class="status-badge status-completed" data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</span></td>
                         </tr>
                     </table>
                 </div>
 
-                <div class="story-section">
-                    <h2 class="story-title" data-en="Story" data-zh="故事">Story</h2>
-                    <p data-en="Xiao Ran was born in 2013 in Guizhou Province with a complex congenital heart disease involving multiple defects: a Ventricular Septal Defect (VSD), an Atrial Septal Defect (ASD), and a Patent Ductus Arteriosus (PDA). This combination of conditions placed severe strain on his heart and significantly limited his ability to engage in normal childhood activities." data-zh="小冉于2013年出生在贵州省，患有复杂的先天性心脏病，涉及多种缺陷：室间隔缺损（VSD）、房间隔缺损（ASD）和动脉导管未闭（PDA）。这些病症的组合给他的心脏带来了严重的负担，极大地限制了他参与正常童年活动的能力。">Xiao Ran was born in 2013 in Guizhou Province with a complex congenital heart disease involving multiple defects: a Ventricular Septal Defect (VSD), an Atrial Septal Defect (ASD), and a Patent Ductus Arteriosus (PDA). This combination of conditions placed severe strain on his heart and significantly limited his ability to engage in normal childhood activities.</p>
-
-                    <p data-en="Throughout his early years, Xiao Ran struggled with chronic fatigue, shortness of breath, and frequent respiratory infections. Simple activities that other children took for granted—running, playing sports, or even walking up stairs—were exhausting challenges for him. His condition also affected his growth and development, causing concern for his family and doctors." data-zh="在他的早年生活中，小冉一直与慢性疲劳、呼吸急促和频繁的呼吸道感染作斗争。其他孩子认为理所当然的简单活动——跑步、运动，甚至爬楼梯——对他来说都是令人筋疲力尽的挑战。他的病情还影响了他的生长发育，引起了家人和医生的担忧。">Throughout his early years, Xiao Ran struggled with chronic fatigue, shortness of breath, and frequent respiratory infections. Simple activities that other children took for granted—running, playing sports, or even walking up stairs—were exhausting challenges for him. His condition also affected his growth and development, causing concern for his family and doctors.</p>
-
-                    <p data-en="Xiao Ran's family, living in a rural area of Guizhou Province, faced significant financial barriers to accessing the specialized cardiac care he needed. The complexity of his condition required surgery at a well-equipped hospital with experienced cardiac surgeons, which was far beyond their financial means." data-zh="小冉的家庭生活在贵州省的农村地区，在获得他所需的专业心脏护理方面面临着巨大的经济障碍。他病情的复杂性需要在设备齐全、拥有经验丰富的心脏外科医生的医院进行手术，这远远超出了他们的经济能力。">Xiao Ran's family, living in a rural area of Guizhou Province, faced significant financial barriers to accessing the specialized cardiac care he needed. The complexity of his condition required surgery at a well-equipped hospital with experienced cardiac surgeons, which was far beyond their financial means.</p>
-
-                    <p data-en="In 2025, Heart to Heart raised ¥30,000 to fund Xiao Ran's complex heart surgery. The operation, performed in January 2025, successfully repaired all three defects. The surgical team reported excellent outcomes, and Xiao Ran's recovery has exceeded expectations." data-zh="2025年，心连心筹集了3万元资助小冉的复杂心脏手术。手术于2025年1月进行，成功修复了所有三个缺陷。手术团队报告了出色的结果，小冉的恢复情况超出了预期。">In 2025, Heart to Heart raised ¥30,000 to fund Xiao Ran's complex heart surgery. The operation, performed in January 2025, successfully repaired all three defects. The surgical team reported excellent outcomes, and Xiao Ran's recovery has exceeded expectations.</p>
-
-                    <p data-en="Today, Xiao Ran is experiencing life with a properly functioning heart for the first time. His energy levels have dramatically improved, and he can now participate in school activities and play with his friends without the constant burden of breathlessness and fatigue. His teachers note that he is more engaged in class and his overall quality of life has been transformed." data-zh="如今，小冉第一次体验到了拥有正常功能心脏的生活。他的精力水平显著提高，现在可以参加学校活动，与朋友一起玩耍，而不必承受持续的呼吸困难和疲劳的负担。他的老师注意到他在课堂上更加投入，他的整体生活质量得到了改变。">Today, Xiao Ran is experiencing life with a properly functioning heart for the first time. His energy levels have dramatically improved, and he can now participate in school activities and play with his friends without the constant burden of breathlessness and fatigue. His teachers note that he is more engaged in class and his overall quality of life has been transformed.</p>
+                <div class="info-section">
+                    <div class="info-header" data-en="Donation Summary" data-zh="捐款摘要">Donation Summary</div>
+                    <div style="padding: 20px;">
+                        <div class="donation-log">
+                            <div class="donation-item">
+                                <span class="donation-date" data-en="June 11, 2025 · Child Sponsorship Contribution" data-zh="2025年6月11日 · 儿童资助捐款">June 11, 2025 · Child Sponsorship Contribution</span>
+                                <span class="donation-amount" data-en="¥30,000" data-zh="¥30,000">¥30,000</span>
+                            </div>
+                        </div>
+                        <div class="total-raised">
+                            <span class="total-label" data-en="Total Raised" data-zh="总筹款">Total Raised</span>
+                            <span class="total-amount">¥30,000</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="story-section">
-                    <h2 class="story-title" data-en="Impact" data-zh="影响">Impact</h2>
-                    <p data-en="Xiao Ran's case represents one of the most complex and impactful interventions supported by Heart to Heart. His successful surgery demonstrates the life-changing difference that community support can make for children facing severe congenital heart conditions. With his heart now functioning normally, Xiao Ran has the opportunity to grow, learn, and thrive like any other child his age." data-zh="小冉的案例代表了心连心支持的最复杂和最具影响力的干预措施之一。他的成功手术展示了社区支持可以为面临严重先天性心脏病的儿童带来改变生活的差异。随着他的心脏现在正常运作，小冉有机会像他这个年龄的其他孩子一样成长、学习和茁壮成长。">Xiao Ran's case represents one of the most complex and impactful interventions supported by Heart to Heart. His successful surgery demonstrates the life-changing difference that community support can make for children facing severe congenital heart conditions. With his heart now functioning normally, Xiao Ran has the opportunity to grow, learn, and thrive like any other child his age.</p>
+                    <h2 class="story-title" data-en="Story" data-zh="故事">Story</h2>
+                    <p data-en="Xiao Ran was born on January 28, 2013 and was diagnosed with complex congenital heart disease at People's Hospital of Yanhe County. Surgery was essential for him to enjoy a healthy childhood, but the cost placed it out of reach." data-zh="小冉于2013年1月28日出生，在沿河县人民医院被诊断患有复杂先天性心脏病。手术对他拥有健康的童年至关重要，但高昂的费用让家庭感到无力承担。">Xiao Ran was born on January 28, 2013 and was diagnosed with complex congenital heart disease at People's Hospital of Yanhe County. Surgery was essential for him to enjoy a healthy childhood, but the cost placed it out of reach.</p>
 
-                    <p data-en="His family's gratitude is immeasurable, and they express their thanks to every donor and supporter who made this miracle possible. Ran's story serves as a powerful reminder of why Heart to Heart's mission is so vital." data-zh="他的家人的感激之情无法衡量，他们向每一位使这一奇迹成为可能的捐赠者和支持者表示感谢。冉的故事有力地提醒我们为什么心连心的使命如此重要。">His family's gratitude is immeasurable, and they express their thanks to every donor and supporter who made this miracle possible. Ran's story serves as a powerful reminder of why Heart to Heart's mission is so vital.</p>
+                    <p data-en="Xiao Ran lives with his Tujia minority parents and his younger brother in rural Guizhou province. Both children are in school. His mother manages the household while his father works as an unskilled migrant worker, seeking jobs wherever possible. Despite careful saving, the family could not raise the funds needed for surgery." data-zh="小冉与土家族父母和弟弟一起生活在贵州省的乡村。两个孩子都在上学。母亲负责照顾家庭，父亲作为非技术工人外出务工，即便再怎么节省，家庭也无法筹集到足够的手术费用。">Xiao Ran lives with his Tujia minority parents and his younger brother in rural Guizhou province. Both children are in school. His mother manages the household while his father works as an unskilled migrant worker, seeking jobs wherever possible. Despite careful saving, the family could not raise the funds needed for surgery.</p>
+
+                    <p data-en="Thanks to a child sponsorship contribution of ¥30,000 from the YK Pao School community, Heart to Heart funded Xiao Ran's surgical care. He was admitted to Shanghai Yida Hospital on August 18, 2025, and his procedure on August 26, 2025 was successful. Xiao Ran is now recovering steadily and looking forward to an active future." data-zh="在包玉刚学校社区¥30,000的儿童资助支持下，心连心承担了小冉的手术费用。他于2025年8月18日入住上海伊达医院，并于8月26日顺利完成手术。小冉目前恢复良好，期待迎接积极健康的未来。">Thanks to a child sponsorship contribution of ¥30,000 from the YK Pao School community, Heart to Heart funded Xiao Ran's surgical care. He was admitted to Shanghai Yida Hospital on August 18, 2025, and his procedure on August 26, 2025 was successful. Xiao Ran is now recovering steadily and looking forward to an active future.</p>
                 </div>
             </div>
         </div>
@@ -149,19 +163,49 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
-                    <div class="footer-logo">
+                    <a href="../index.html" class="footer-logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h3 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h3>
                             <span data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <p class="footer-mission" data-en="Transforming lives through community support and compassion, one heart at a time." data-zh="通过社区支持和同情心改变生活，一次一颗心。">Transforming lives through community support and compassion, one heart at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-en="Our Work" data-zh="我们的工作">Our Work</h4>
+                        <ul>
+                            <li><a href="../index.html#impact" data-en="Success Stories" data-zh="成功故事">Success Stories</a></li>
+                            <li><a href="../index.html#events" data-en="Charity Events" data-zh="慈善活动">Charity Events</a></li>
+                            <li><a href="../index.html#about" data-en="Our Mission" data-zh="我们的使命">Our Mission</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Get Involved" data-zh="参与其中">Get Involved</h4>
+                        <ul>
+                            <li><a href="../index.html#contact" data-en="Volunteer" data-zh="志愿者">Volunteer</a></li>
+                            <li><a href="../index.html#contact" data-en="Donate" data-zh="捐赠">Donate</a></li>
+                            <li><a href="../index.html#contact" data-en="Partner With Us" data-zh="与我们合作">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Connect" data-zh="联系">Connect</h4>
+                        <ul>
+                            <li><a href="mailto:contact@h2h.ykps.net" data-en="Email Us" data-zh="给我们发邮件">Email Us</a></li>
+                            <li><a href="#" data-en="WeChat" data-zh="微信">WeChat</a></li>
+                            <li><a href="#" data-en="Follow Updates" data-zh="关注更新">Follow Updates</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p data-en="© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion." data-zh="© 2025 心连心 - 包玉刚实验学校。用爱心改变生活。">© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion.</p>
+                    <p class="footer-credit">
+                        <span data-en="Website designed by" data-zh="网站设计者">Website designed by</span>
+                        <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a>
+                    </p>
                 </div>
             </div>
         </div>

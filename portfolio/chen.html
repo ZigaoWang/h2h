@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiao Chen · 2023 - Heart to Heart</title>
+    <title>Xiao Chen - Heart to Heart</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,7 @@
         .dossier-left { position: sticky; top: 100px; }
         .patient-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .patient-header { margin-bottom: 40px; }
-        .patient-name { font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin: 0 0 8px 0; }
-        .patient-id { font-size: 0.9rem; color: #888; letter-spacing: 0.5px; text-transform: uppercase; }
+        .patient-name { font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin: 0; }
         .info-section { background: white; border: 1px solid #e5e5e5; margin-bottom: 20px; }
         .info-header { background: #2c3e50; color: white; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; }
         .info-table { border-collapse: collapse; width: 100%; }
@@ -26,10 +25,21 @@
         .info-table td { padding: 14px 20px; font-size: 0.95rem; }
         .info-table td:first-child { color: #666; font-weight: 500; width: 140px; }
         .info-table td:last-child { color: #1a1a1a; }
+        .status-badge { display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+        .status-completed { background: #d4edda; color: #155724; }
         .story-section { background: white; border: 1px solid #e5e5e5; padding: 40px; margin-bottom: 20px; }
         .story-title { font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #e74c3c; }
         .story-section p { line-height: 1.75; color: #444; margin-bottom: 18px; font-size: 1rem; }
         .story-section p:last-child { margin-bottom: 0; }
+        .donation-log { margin-top: 20px; }
+        .donation-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .donation-item:last-child { border-bottom: none; }
+        .donation-date { color: #666; font-size: 0.9rem; }
+        .donation-amount { font-weight: 600; color: #e74c3c; }
+        .total-raised { background: #fff3cd; padding: 16px 20px; border-radius: 4px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .total-label { font-weight: 600; color: #856404; }
+        .total-amount { font-size: 1.5rem; font-weight: 700; color: #e74c3c; }
+        .donation-note { font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.5; }
         @media (max-width: 900px) {
             .dossier-layout { grid-template-columns: 1fr; gap: 30px; }
             .dossier-left { position: relative; top: 0; }
@@ -41,18 +51,19 @@
         <nav class="main-nav">
             <div class="container">
                 <div class="nav-content">
-                    <div class="logo">
+                    <a href="../index.html" class="logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h1 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h1>
                             <span class="subtitle" data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <ul class="nav-menu">
                         <li><a href="../index.html#about" data-en="About Us" data-zh="关于我们">About Us</a></li>
                         <li><a href="../index.html#impact" data-en="Our Impact" data-zh="我们的影响">Our Impact</a></li>
                         <li><a href="../index.html#events" data-en="Events" data-zh="活动">Events</a></li>
                         <li><a href="../index.html#portfolio" data-en="Portfolio" data-zh="档案">Portfolio</a></li>
+                        <li><a href="../index.html#stories" data-en="Stories" data-zh="故事">Stories</a></li>
                         <li><a href="../index.html#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
                     </ul>
                     <div class="header-right">
@@ -61,6 +72,11 @@
                             <button class="lang-btn" data-lang="zh">中文</button>
                         </div>
                     </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -74,8 +90,7 @@
 
             <div class="dossier-right">
                 <div class="patient-header">
-                    <h1 class="patient-name" data-en="Xiao Chen · 2023" data-zh="小陈 · 2023">Xiao Chen · 2023</h1>
-                    <p class="patient-id" data-en="Patient Dossier #001" data-zh="患者档案 #001">Patient Dossier #001</p>
+                    <h1 class="patient-name" data-en="Xiao Chen" data-zh="小陈">Xiao Chen</h1>
                 </div>
 
                 <div class="info-section">
@@ -109,17 +124,33 @@
                         </tr>
                         <tr>
                             <td data-en="Surgery Date" data-zh="手术日期">Surgery Date</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td data-en="Donation" data-zh="捐款金额">Donation</td>
-                            <td>¥30,000</td>
+                            <td data-en="June 3, 2025" data-zh="2025年6月3日">June 3, 2025</td>
                         </tr>
                         <tr>
                             <td data-en="Status" data-zh="状态">Status</td>
-                            <td data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</td>
+                            <td><span class="status-badge status-completed" data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</span></td>
                         </tr>
                     </table>
+                </div>
+
+                <div class="info-section">
+                    <div class="info-header" data-en="Donation Summary" data-zh="捐款摘要">Donation Summary</div>
+                    <div style="padding: 20px;">
+                        <div class="donation-log">
+                            <div class="donation-item">
+                                <span class="donation-date" data-en="November 13, 2024 · Child Sponsorship #0005955" data-zh="2024年11月13日 · 儿童资助 #0005955">November 13, 2024 · Child Sponsorship #0005955</span>
+                                <span class="donation-amount" data-en="¥10,000" data-zh="¥10,000">¥10,000</span>
+                            </div>
+                            <div class="donation-item">
+                                <span class="donation-date" data-en="April 14, 2025 · Child Sponsorship #0005949" data-zh="2025年4月14日 · 儿童资助 #0005949">April 14, 2025 · Child Sponsorship #0005949</span>
+                                <span class="donation-amount" data-en="¥20,000" data-zh="¥20,000">¥20,000</span>
+                            </div>
+                        </div>
+                        <div class="total-raised">
+                            <span class="total-label" data-en="Total Raised" data-zh="总筹款">Total Raised</span>
+                            <span class="total-amount">¥30,000</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="story-section">
@@ -128,7 +159,7 @@
 
                     <p data-en="His family, facing financial hardship in their remote village, struggled to afford the necessary medical treatment. The surgery required specialized care at Shanghai Yida Hospital, far from their home." data-zh="他的家庭在偏远的村庄面临经济困难，难以负担必要的医疗费用。手术需要在远离家乡的上海伊达医院接受专业治疗。">His family, facing financial hardship in their remote village, struggled to afford the necessary medical treatment. The surgery required specialized care at Shanghai Yida Hospital, far from their home.</p>
 
-                    <p data-en="Through Heart to Heart's community fundraising efforts, we raised ¥30,000 to cover Xiao Chen's surgery costs. The procedure was successfully completed in 2024, and Xiao Chen is now recovering well. His family reports that he is growing stronger each day, with improved breathing and energy levels." data-zh="通过心连心的社区筹款活动，我们筹集了3万元来支付小陈的手术费用。手术于2024年成功完成，小陈现在恢复良好。他的家人报告说，他每天都在变得更强壮，呼吸和精力水平都有所改善。">Through Heart to Heart's community fundraising efforts, we raised ¥30,000 to cover Xiao Chen's surgery costs. The procedure was successfully completed in 2024, and Xiao Chen is now recovering well. His family reports that he is growing stronger each day, with improved breathing and energy levels.</p>
+                    <p data-en="Heart to Heart raised ¥30,000 to cover Xiao Chen's surgery costs. The procedure was successfully completed on June 3, 2025, and Xiao Chen is now recovering well. His caregivers share that he is becoming stronger each day, with steady improvements in breathing and energy levels." data-zh="心连心筹集了3万元来支付小陈的手术费用。手术于2025年6月3日成功完成，小陈现在恢复良好。照护者表示，他的体力和呼吸状况正在稳步改善，每天都更有活力。">Heart to Heart raised ¥30,000 to cover Xiao Chen's surgery costs. The procedure was successfully completed on June 3, 2025, and Xiao Chen is now recovering well. His caregivers share that he is becoming stronger each day, with steady improvements in breathing and energy levels.</p>
 
                     <p data-en="Xiao Chen's case represents the critical importance of early intervention for congenital heart defects. With timely treatment, children like Xiao Chen can grow up to lead completely normal, healthy lives." data-zh="小陈的案例代表了早期干预先天性心脏缺陷的重要性。通过及时治疗，像小陈这样的孩子可以成长为完全正常、健康的生活。">Xiao Chen's case represents the critical importance of early intervention for congenital heart defects. With timely treatment, children like Xiao Chen can grow up to lead completely normal, healthy lives.</p>
                 </div>
@@ -145,19 +176,49 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
-                    <div class="footer-logo">
+                    <a href="../index.html" class="footer-logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h3 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h3>
                             <span data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <p class="footer-mission" data-en="Transforming lives through community support and compassion, one heart at a time." data-zh="通过社区支持和同情心改变生活，一次一颗心。">Transforming lives through community support and compassion, one heart at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-en="Our Work" data-zh="我们的工作">Our Work</h4>
+                        <ul>
+                            <li><a href="../index.html#impact" data-en="Success Stories" data-zh="成功故事">Success Stories</a></li>
+                            <li><a href="../index.html#events" data-en="Charity Events" data-zh="慈善活动">Charity Events</a></li>
+                            <li><a href="../index.html#about" data-en="Our Mission" data-zh="我们的使命">Our Mission</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Get Involved" data-zh="参与其中">Get Involved</h4>
+                        <ul>
+                            <li><a href="../index.html#contact" data-en="Volunteer" data-zh="志愿者">Volunteer</a></li>
+                            <li><a href="../index.html#contact" data-en="Donate" data-zh="捐赠">Donate</a></li>
+                            <li><a href="../index.html#contact" data-en="Partner With Us" data-zh="与我们合作">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Connect" data-zh="联系">Connect</h4>
+                        <ul>
+                            <li><a href="mailto:contact@h2h.ykps.net" data-en="Email Us" data-zh="给我们发邮件">Email Us</a></li>
+                            <li><a href="#" data-en="WeChat" data-zh="微信">WeChat</a></li>
+                            <li><a href="#" data-en="Follow Updates" data-zh="关注更新">Follow Updates</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p data-en="© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion." data-zh="© 2025 心连心 - 包玉刚实验学校。用爱心改变生活。">© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion.</p>
+                    <p class="footer-credit">
+                        <span data-en="Website designed by" data-zh="网站设计者">Website designed by</span>
+                        <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a>
+                    </p>
                 </div>
             </div>
         </div>

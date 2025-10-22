@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiao Tu · 2009 - Heart to Heart</title>
+    <title>Xiao Tu - Heart to Heart</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
         .patient-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .patient-header { margin-bottom: 40px; }
         .patient-name { font-size: 2.5rem; font-weight: 600; color: #1a1a1a; margin: 0 0 8px 0; }
-        .patient-id { font-size: 0.9rem; color: #888; letter-spacing: 0.5px; text-transform: uppercase; }
         .info-section { background: white; border: 1px solid #e5e5e5; margin-bottom: 20px; }
         .info-header { background: #2c3e50; color: white; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; }
         .info-table { border-collapse: collapse; width: 100%; }
@@ -26,10 +25,19 @@
         .info-table td { padding: 14px 20px; font-size: 0.95rem; }
         .info-table td:first-child { color: #666; font-weight: 500; width: 140px; }
         .info-table td:last-child { color: #1a1a1a; }
+        .status-badge { display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+        .status-completed { background: #d4edda; color: #155724; }
         .story-section { background: white; border: 1px solid #e5e5e5; padding: 40px; margin-bottom: 20px; }
         .story-title { font-size: 1.4rem; font-weight: 600; color: #1a1a1a; margin: 0 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #e74c3c; }
         .story-section p { line-height: 1.75; color: #444; margin-bottom: 18px; font-size: 1rem; }
-        .story-section p:last-child { margin-bottom: 0; }
+        .donation-log { margin-top: 20px; }
+        .donation-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .donation-item:last-child { border-bottom: none; }
+        .donation-date { color: #666; font-size: 0.9rem; }
+        .donation-amount { font-weight: 600; color: #e74c3c; }
+        .total-raised { background: #fff3cd; padding: 16px 20px; border-radius: 4px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .total-label { font-weight: 600; color: #856404; }
+        .total-amount { font-size: 1.5rem; font-weight: 700; color: #e74c3c; }
         @media (max-width: 900px) {
             .dossier-layout { grid-template-columns: 1fr; gap: 30px; }
             .dossier-left { position: relative; top: 0; }
@@ -41,18 +49,19 @@
         <nav class="main-nav">
             <div class="container">
                 <div class="nav-content">
-                    <div class="logo">
+                    <a href="../index.html" class="logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h1 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h1>
                             <span class="subtitle" data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <ul class="nav-menu">
                         <li><a href="../index.html#about" data-en="About Us" data-zh="关于我们">About Us</a></li>
                         <li><a href="../index.html#impact" data-en="Our Impact" data-zh="我们的影响">Our Impact</a></li>
                         <li><a href="../index.html#events" data-en="Events" data-zh="活动">Events</a></li>
                         <li><a href="../index.html#portfolio" data-en="Portfolio" data-zh="档案">Portfolio</a></li>
+                        <li><a href="../index.html#stories" data-en="Stories" data-zh="故事">Stories</a></li>
                         <li><a href="../index.html#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
                     </ul>
                     <div class="header-right">
@@ -61,6 +70,11 @@
                             <button class="lang-btn" data-lang="zh">中文</button>
                         </div>
                     </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -74,8 +88,7 @@
 
             <div class="dossier-right">
                 <div class="patient-header">
-                    <h1 class="patient-name" data-en="Xiao Tu · 2009" data-zh="小涂 · 2009">Xiao Tu · 2009</h1>
-                    <p class="patient-id" data-en="Patient Dossier #002" data-zh="患者档案 #002">Patient Dossier #002</p>
+                    <h1 class="patient-name" data-en="Xiao Tu" data-zh="小涂">Xiao Tu</h1>
                 </div>
 
                 <div class="info-section">
@@ -105,39 +118,42 @@
                     <table class="info-table">
                         <tr>
                             <td data-en="Hospital" data-zh="医院">Hospital</td>
-                            <td data-en="Sichuan Provincial Hospital" data-zh="四川省人民医院">Sichuan Provincial Hospital</td>
+                            <td data-en="Shanghai Yida Hospital" data-zh="上海伊达医院">Shanghai Yida Hospital</td>
                         </tr>
                         <tr>
                             <td data-en="Surgery Date" data-zh="手术日期">Surgery Date</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td data-en="Donation" data-zh="捐款金额">Donation</td>
-                            <td>¥30,000</td>
+                            <td data-en="August 25, 2025" data-zh="2025年8月25日">August 25, 2025</td>
                         </tr>
                         <tr>
                             <td data-en="Status" data-zh="状态">Status</td>
-                            <td data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</td>
+                            <td><span class="status-badge status-completed" data-en="Surgery Completed" data-zh="手术完成">Surgery Completed</span></td>
                         </tr>
                     </table>
                 </div>
 
-                <div class="story-section">
-                    <h2 class="story-title" data-en="Story" data-zh="故事">Story</h2>
-                    <p data-en="Xiao Tu was born in 2009 in Sichuan Province with a Ventricular Septal Defect (VSD), a hole in the wall separating the heart's lower chambers. This condition caused abnormal blood flow between the ventricles, making his heart work much harder than normal and limiting his physical abilities." data-zh="小涂于2009年出生在四川省，患有室间隔缺损（VSD），即心脏下腔之间的壁上有一个洞。这种情况导致心室之间的血液流动异常，使他的心脏比正常情况下工作得更辛苦，限制了他的身体能力。">Xiao Tu was born in 2009 in Sichuan Province with a Ventricular Septal Defect (VSD), a hole in the wall separating the heart's lower chambers. This condition caused abnormal blood flow between the ventricles, making his heart work much harder than normal and limiting his physical abilities.</p>
-
-                    <p data-en="As a secondary school student, Xiao Tu faced daily challenges. Simple activities like climbing stairs or participating in physical education classes left him breathless and exhausted. His condition not only affected his physical health but also his ability to fully engage in school life and social activities with his peers." data-zh="作为一名中学生，小涂每天都面临挑战。爬楼梯或参加体育课等简单活动都让他气喘吁吁、筋疲力尽。他的病情不仅影响了他的身体健康，还影响了他充分参与学校生活和与同龄人社交活动的能力。">As a secondary school student, Xiao Tu faced daily challenges. Simple activities like climbing stairs or participating in physical education classes left him breathless and exhausted. His condition not only affected his physical health but also his ability to fully engage in school life and social activities with his peers.</p>
-
-                    <p data-en="His family, struggling financially, had postponed the surgery for years, hoping his condition would improve on its own. However, as Xiao Tu grew older, the need for intervention became increasingly urgent." data-zh="他的家庭经济困难，多年来一直推迟手术，希望他的病情能自行好转。然而，随着小涂年龄的增长，干预的需求变得越来越紧迫。">His family, struggling financially, had postponed the surgery for years, hoping his condition would improve on its own. However, as Xiao Tu grew older, the need for intervention became increasingly urgent.</p>
-
-                    <p data-en="Heart to Heart raised ¥30,000 to fund Xiao Tu's VSD repair surgery in 2024. The operation was a success, and Xiao Tu's recovery has been remarkable. He has returned to school with renewed energy and can now participate in activities that were previously impossible for him." data-zh="心连心筹集了3万元资助小涂的室缺修补手术，手术于2024年进行。手术取得了成功，小涂的恢复情况非常好。他以焕然一新的精力重返学校，现在可以参加以前对他来说不可能的活动。">Heart to Heart raised ¥30,000 to fund Xiao Tu's VSD repair surgery in 2024. The operation was a success, and Xiao Tu's recovery has been remarkable. He has returned to school with renewed energy and can now participate in activities that were previously impossible for him.</p>
-
-                    <p data-en="Xiao Tu's teachers report that his academic performance has improved significantly since the surgery, as he no longer struggles with the constant fatigue that once held him back. His story demonstrates how addressing congenital heart defects can transform not just physical health, but every aspect of a young person's life." data-zh="小涂的老师报告说，自手术以来，他的学业成绩有了显著提高，因为他不再受到曾经阻碍他的持续疲劳的困扰。他的故事表明，解决先天性心脏缺陷不仅可以改变身体健康，还可以改变年轻人生活的方方面面。">Xiao Tu's teachers report that his academic performance has improved significantly since the surgery, as he no longer struggles with the constant fatigue that once held him back. His story demonstrates how addressing congenital heart defects can transform not just physical health, but every aspect of a young person's life.</p>
+                <div class="info-section">
+                    <div class="info-header" data-en="Donation Summary" data-zh="捐款摘要">Donation Summary</div>
+                    <div style="padding: 20px;">
+                        <div class="donation-log">
+                            <div class="donation-item">
+                                <span class="donation-date" data-en="June 11, 2025 · Child Sponsorship Contribution" data-zh="2025年6月11日 · 儿童资助捐款">June 11, 2025 · Child Sponsorship Contribution</span>
+                                <span class="donation-amount" data-en="¥30,000" data-zh="¥30,000">¥30,000</span>
+                            </div>
+                        </div>
+                        <div class="total-raised">
+                            <span class="total-label" data-en="Total Raised" data-zh="总筹款">Total Raised</span>
+                            <span class="total-amount">¥30,000</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="story-section">
-                    <h2 class="story-title" data-en="Impact" data-zh="影响">Impact</h2>
-                    <p data-en="Xiao Tu's successful surgery has opened up a world of possibilities. He can now focus on his education and future aspirations without the constant burden of his heart condition. His family expresses deep gratitude to the Heart to Heart community for giving their son a second chance at a normal life." data-zh="小涂的成功手术打开了一个充满可能性的世界。他现在可以专注于自己的教育和未来的抱负，而不必承受心脏病的持续负担。他的家人对心连心社区表示深深的感谢，感谢他们给了儿子第二次过正常生活的机会。">Xiao Tu's successful surgery has opened up a world of possibilities. He can now focus on his education and future aspirations without the constant burden of his heart condition. His family expresses deep gratitude to the Heart to Heart community for giving their son a second chance at a normal life.</p>
+                    <h2 class="story-title" data-en="Story" data-zh="故事">Story</h2>
+                    <p data-en="Xiao Tu, born in 2009 in Sichuan Province, is a secondary school student who was diagnosed with Ventricular Septal Defect (VSD), a condition where there is a hole in the wall separating the heart's lower chambers. This defect caused abnormal blood flow and put strain on his heart and lungs." data-zh="小涂，2009年出生于四川省，是一名中学生，被诊断患有室间隔缺损（VSD），这是一种心脏下腔之间的壁上有洞的疾病。这种缺陷导致血液流动异常，给他的心脏和肺部带来压力。">Xiao Tu, born in 2009 in Sichuan Province, is a secondary school student who was diagnosed with Ventricular Septal Defect (VSD), a condition where there is a hole in the wall separating the heart's lower chambers. This defect caused abnormal blood flow and put strain on his heart and lungs.</p>
+
+                    <p data-en="As a teenager, Xiao Tu experienced fatigue and difficulty keeping up with his peers in physical activities. His family struggled with the financial burden of the necessary corrective surgery." data-zh="作为一名青少年，小涂经历了疲劳，难以在体育活动中跟上同龄人。他的家庭在必要的矫正手术的经济负担下挣扎。">As a teenager, Xiao Tu experienced fatigue and difficulty keeping up with his peers in physical activities. His family struggled with the financial burden of the necessary corrective surgery.</p>
+
+                    <p data-en="Heart to Heart raised ¥30,000 to fund Xiao Tu's VSD repair surgery at Shanghai Yida Hospital. The procedure on August 25, 2025 was successful, and Xiao Tu has since returned to school with renewed energy for classes and activities." data-zh="心连心筹集了3万元资助小涂在上海伊达医院接受室缺修补手术。手术于2025年8月25日顺利完成，小涂已经重返校园，在课堂和活动中焕发出新的活力。">Heart to Heart raised ¥30,000 to fund Xiao Tu's VSD repair surgery at Shanghai Yida Hospital. The procedure on August 25, 2025 was successful, and Xiao Tu has since returned to school with renewed energy for classes and activities.</p>
                 </div>
             </div>
         </div>
@@ -147,19 +163,49 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
-                    <div class="footer-logo">
+                    <a href="../index.html" class="footer-logo">
                         <div class="logo-icon"><img src="../images/logo.png" alt="Heart to Heart Logo" /></div>
                         <div class="logo-text">
                             <h3 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h3>
                             <span data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
                         </div>
-                    </div>
+                    </a>
                     <p class="footer-mission" data-en="Transforming lives through community support and compassion, one heart at a time." data-zh="通过社区支持和同情心改变生活，一次一颗心。">Transforming lives through community support and compassion, one heart at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-en="Our Work" data-zh="我们的工作">Our Work</h4>
+                        <ul>
+                            <li><a href="../index.html#impact" data-en="Success Stories" data-zh="成功故事">Success Stories</a></li>
+                            <li><a href="../index.html#events" data-en="Charity Events" data-zh="慈善活动">Charity Events</a></li>
+                            <li><a href="../index.html#about" data-en="Our Mission" data-zh="我们的使命">Our Mission</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Get Involved" data-zh="参与其中">Get Involved</h4>
+                        <ul>
+                            <li><a href="../index.html#contact" data-en="Volunteer" data-zh="志愿者">Volunteer</a></li>
+                            <li><a href="../index.html#contact" data-en="Donate" data-zh="捐赠">Donate</a></li>
+                            <li><a href="../index.html#contact" data-en="Partner With Us" data-zh="与我们合作">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Connect" data-zh="联系">Connect</h4>
+                        <ul>
+                            <li><a href="mailto:contact@h2h.ykps.net" data-en="Email Us" data-zh="给我们发邮件">Email Us</a></li>
+                            <li><a href="#" data-en="WeChat" data-zh="微信">WeChat</a></li>
+                            <li><a href="#" data-en="Follow Updates" data-zh="关注更新">Follow Updates</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p data-en="© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion." data-zh="© 2025 心连心 - 包玉刚实验学校。用爱心改变生活。">© 2025 Heart to Heart - YK Pao School. Transforming lives with compassion.</p>
+                    <p class="footer-credit">
+                        <span data-en="Website designed by" data-zh="网站设计者">Website designed by</span>
+                        <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a>
+                    </p>
                 </div>
             </div>
         </div>
