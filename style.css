@@ -1360,12 +1360,59 @@ body.dossier-page {
     color: var(--text-primary);
 }
 
-.stat-note {
+.donation-progress {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    background: white;
+    box-shadow: var(--shadow-subtle);
+}
+
+.progress-header,
+.progress-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.progress-footer {
     margin-top: var(--space-3);
     font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.progress-label {
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-muted);
+}
+
+.progress-percent {
+    font-weight: 700;
+    color: var(--heart-red);
+}
+
+.progress-track {
+    margin-top: var(--space-4);
+    width: 100%;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--bg-neutral);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--heart-red), var(--heart-red-dark));
+    border-radius: 999px;
+    transition: width 0.6s ease;
 }
 
 .donation-qr-panel {
@@ -1794,8 +1841,15 @@ body.dossier-page {
         justify-content: center;
     }
 
+    .progress-header,
+    .progress-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
     .qr-card {
-        max-width: 260px;
+        max-width: 220px;
     }
 
     .contact-email-panel {
@@ -2036,8 +2090,15 @@ body.dossier-page {
         margin-top: var(--space-4);
     }
 
+    .progress-header,
+    .progress-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
     .qr-card {
-        max-width: 220px;
+        max-width: 260px;
     }
 
     .response-note {
