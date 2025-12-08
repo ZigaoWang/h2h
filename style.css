@@ -1079,6 +1079,94 @@ body.dossier-page {
     font-size: 0.9rem;
 }
 
+/* Future Plans Section */
+.future-plans {
+    padding: var(--space-24) 0;
+    background: var(--bg-section);
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.future-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.plan-label {
+    align-self: flex-start;
+    padding: var(--space-1) var(--space-3);
+    background: var(--heart-red-light);
+    color: var(--heart-red);
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.4px;
+}
+
+.future-card h3 {
+    margin: 0;
+}
+
+.future-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.plan-points {
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+    padding-left: 0;
+    margin: 0;
+}
+
+.plan-points li {
+    position: relative;
+    padding-left: var(--space-4);
+    color: var(--text-primary);
+}
+
+.plan-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--heart-red);
+    font-weight: 700;
+}
+
+.future-cta {
+    margin-top: var(--space-12);
+    background: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    box-shadow: var(--shadow-subtle);
+}
+
+.future-cta h3 {
+    margin: 0 0 var(--space-2) 0;
+}
+
+.future-cta p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
 /* Portfolio Section */
 .portfolio-preview {
     padding: var(--space-24) 0;
@@ -1854,6 +1942,17 @@ body.dossier-page {
 
     .contact-email-panel {
         margin-top: var(--space-6);
+    }
+
+    .future-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .future-cta .btn-primary {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
     }
 
     /* Footer improvements */
