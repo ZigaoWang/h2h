@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Relations - Heart to Heart</title>
+    <meta name="description" content="Donor Relations for Heart to Heart at YK Pao School. Access our annual and half-year reports.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        /* ── Page header ── */
+        .dr-header {
+            position: relative;
+            height: 50vh;
+            min-height: 360px;
+            overflow: hidden;
+        }
+        .dr-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+        .dr-header-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.48);
+        }
+        .dr-header-text {
+            position: absolute;
+            bottom: 3rem;
+            left: 0;
+            right: 0;
+            padding: 0 2rem;
+        }
+        .dr-header-text .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .dr-header-text .eyebrow {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 0.6rem;
+        }
+        .dr-header-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        /* ── Reports section ── */
+        .dr-reports {
+            padding: 5rem 0 6rem;
+            background: var(--bg-white);
+        }
+        .dr-reports .container {
+            max-width: 860px;
+        }
+        .dr-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--heart-red);
+            margin-bottom: 0.5rem;
+        }
+        .dr-heading {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+        .dr-sub {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+        .dr-rule {
+            border: none;
+            border-top: 1px solid var(--border-subtle);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── Big report card ── */
+        .report-feature {
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-neutral);
+        }
+        .report-feature-body {
+            display: flex;
+            align-items: stretch;
+            min-height: 280px;
+        }
+        .report-feature-aside {
+            width: 220px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .report-feature-aside img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .report-feature-main {
+            padding: 3rem 3rem 3rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            flex: 1;
+        }
+        .report-feature-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .report-feature-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .report-feature-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+            max-width: 420px;
+        }
+        .report-feature-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 3rem 1.25rem 3.5rem;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-white);
+        }
+        .report-feature-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .report-dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            background: var(--heart-red);
+            color: #fff !important;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background var(--transition);
+        }
+        .report-dl-btn:hover {
+            background: var(--heart-red-dark);
+        }
+        .report-dl-btn svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        @media (max-width: 640px) {
+            .dr-header-text h1 { font-size: 1.9rem; }
+            .report-feature-body { flex-direction: column; min-height: auto; }
+            .report-feature-aside { width: 100%; height: 120px; flex-direction: row; }
+            .report-feature-main { padding: 2rem 1.5rem 1.5rem; }
+            .report-feature-footer { flex-direction: column; gap: 1rem; align-items: flex-start; padding: 1.25rem 1.5rem; }
+            .report-feature-title { font-size: 1.35rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon"><img src="images/logo.png" alt="Heart to Heart Logo" /></div>
+                        <div class="logo-text">
+                            <h1 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h1>
+                            <span class="subtitle" data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
+                        </div>
+                    </a>
+                    <ul class="nav-menu">
+                        <li><a href="index.html#about" data-en="About Us" data-zh="关于我们">About Us</a></li>
+                        <li><a href="index.html#impact" data-en="Our Impact" data-zh="我们的影响">Our Impact</a></li>
+                        <li><a href="index.html#events" data-en="Events" data-zh="活动">Events</a></li>
+                        <li><a href="index.html#portfolio" data-en="Portfolio" data-zh="档案">Portfolio</a></li>
+                        <li><a href="index.html#stories" data-en="Stories" data-zh="故事">Stories</a></li>
+                        <li><a href="index.html#future" data-en="Future Plans" data-zh="未来计划">Future Plans</a></li>
+                        <li><a href="donor-relations.html" data-en="Donor Relations" data-zh="捐赠者关系">Donor Relations</a></li>
+                        <li><a href="index.html#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
+                    </ul>
+                    <div class="header-right">
+                        <div class="language-toggle">
+                            <button class="lang-btn active" data-lang="en">EN</button>
+                            <button class="lang-btn" data-lang="zh">中文</button>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dr-header">
+            <img src="images/640.webp" alt="Heart to Heart — Donor Relations" />
+            <div class="dr-header-overlay"></div>
+            <div class="dr-header-text">
+                <div class="container">
+                    <span class="eyebrow" data-en="Heart to Heart · YK Pao School" data-zh="心连心 · 包玉刚实验学校">Heart to Heart · YK Pao School</span>
+                    <h1 data-en="Donor Relations" data-zh="捐赠者关系">Donor Relations</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="dr-reports">
+            <div class="container">
+                <p class="dr-label" data-en="Reports" data-zh="报告">Reports</p>
+                <h2 class="dr-heading" data-en="Financial Reports" data-zh="财务报告">Financial Reports</h2>
+                <p class="dr-sub" data-en="Full transparency on fundraising, fund allocation, and community impact." data-zh="关于筹款、资金分配和社区影响的完全透明。">Full transparency on fundraising, fund allocation, and community impact.</p>
+                <hr class="dr-rule">
+
+                <div class="report-feature">
+                    <div class="report-feature-body">
+                        <div class="report-feature-aside">
+                            <img src="files/thumbnail.jpg" alt="H2H Half-Year Report 2025–26 Cover" />
+                        </div>
+                        <div class="report-feature-main">
+                            <span class="report-feature-tag" data-en="Half-Year Report · 2025–2026" data-zh="半年报告 · 2025–2026">Half-Year Report · 2025–2026</span>
+                            <h3 class="report-feature-title" data-en="2025–26 Half-Year Report" data-zh="2025–26半年报告">2025–26 Half-Year Report</h3>
+                            <p class="report-feature-desc" data-en="Events, fundraising outcomes, fund allocation, and patient impact for the first half of Academic Year 2025–26." data-zh="2025–26学年上半学期的活动、筹款成果、资金分配和患者影响。">Events, fundraising outcomes, fund allocation, and patient impact for the first half of Academic Year 2025–26.</p>
+                        </div>
+                    </div>
+                    <div class="report-feature-footer">
+                        <span class="report-feature-meta" data-en="Academic Year 2025–26 · Published March 2026" data-zh="2025–26学年 · 2026年3月发布">Academic Year 2025–26 · Published March 2026</span>
+                        <a href="files/25-26-half-year-report.pdf" download class="report-dl-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            <span data-en="Download Report" data-zh="下载报告">Download Report</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon"><img src="images/logo.png" alt="Heart to Heart Logo" /></div>
+                        <div class="logo-text">
+                            <h3 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h3>
+                            <span data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
+                        </div>
+                    </a>
+                    <p class="footer-mission" data-en="Transforming lives through community support and compassion, one heart at a time." data-zh="通过社区支持和同情心改变生活，一次一颗心。">
+                        Transforming lives through community support and compassion, one heart at a time.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-en="Our Work" data-zh="我们的工作">Our Work</h4>
+                        <ul>
+                            <li><a href="index.html#impact" data-en="Success Stories" data-zh="成功故事">Success Stories</a></li>
+                            <li><a href="index.html#events" data-en="Charity Events" data-zh="慈善活动">Charity Events</a></li>
+                            <li><a href="index.html#about" data-en="Our Mission" data-zh="我们的使命">Our Mission</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Get Involved" data-zh="参与其中">Get Involved</h4>
+                        <ul>
+                            <li><a href="index.html#contact" data-en="Volunteer" data-zh="志愿者">Volunteer</a></li>
+                            <li><a href="index.html#contact" data-en="Donate" data-zh="捐赠">Donate</a></li>
+                            <li><a href="index.html#contact" data-en="Partner With Us" data-zh="与我们合作">Partner With Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-en="Connect" data-zh="联系">Connect</h4>
+                        <ul>
+                            <li><a href="mailto:h2h@ykps.edu.cn" data-en="Email Us" data-zh="给我们发邮件">Email Us</a></li>
+                            <li><a href="#" data-en="WeChat" data-zh="微信">WeChat</a></li>
+                            <li><a href="#" data-en="Follow Updates" data-zh="关注更新">Follow Updates</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p data-en="© 2026 Heart to Heart - YK Pao School. Transforming lives with compassion." data-zh="© 2026 心连心 - 包玉刚实验学校。用爱心改变生活。">© 2026 Heart to Heart - YK Pao School. Transforming lives with compassion.</p>
+                    <p class="footer-credit">
+                        <span data-en="Website designed by" data-zh="网站设计者">Website designed by</span>
+                        <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
