@@ -924,6 +924,20 @@ body.dossier-page {
     font-size: 0.875rem;
 }
 
+.event-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: var(--heart-red);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
 .event-date .month {
     font-size: 0.7rem;
     font-weight: 600;
