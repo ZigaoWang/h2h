@@ -827,44 +827,21 @@ button {
     color: var(--muted);
 }
 
-.donate-give {
-    padding-left: 64px;
-    border-left: 1px solid #dcd8d1;
+.donate-qr {
+    justify-self: center;
+    text-align: center;
 }
 
-.donate-give h3 {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
+.donate-qr img {
+    width: 220px;
+    height: 220px;
+    mix-blend-mode: multiply;
 }
 
-.donate-give-body {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.donate-give img {
-    flex-shrink: 0;
-    width: 168px;
-    height: 168px;
-    padding: 12px;
-    background: #fff;
-    border-radius: var(--radius);
-}
-
-.donate-give ol {
-    padding-left: 1.2em;
+.donate-qr figcaption {
+    margin-top: 12px;
+    font-size: 0.9375rem;
     color: var(--ink-2);
-}
-
-.donate-give li + li {
-    margin-top: 10px;
-}
-
-.donate-give-note {
-    margin-top: 20px;
-    font-size: 0.875rem;
-    color: var(--muted);
 }
 
 /* Footer
@@ -1203,11 +1180,8 @@ button {
         gap: 48px;
     }
 
-    .donate-give {
-        padding-left: 0;
-        padding-top: 40px;
-        border-left: 0;
-        border-top: 1px solid #dcd8d1;
+    .donate-qr {
+        justify-self: start;
     }
 
     .footer-grid {
@@ -1360,11 +1334,6 @@ button {
 
     .numbers dd {
         font-size: 1.5rem;
-    }
-
-    .donate-give-body {
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .footer-grid {
