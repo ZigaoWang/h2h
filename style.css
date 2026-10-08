@@ -1153,3 +1153,234 @@ button {
     margin-top: 14px;
 }
 
+/* Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .about,
+    .impact,
+    .funding,
+    .event-feature {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .child-grid,
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-row {
+        grid-template-columns: 120px 1fr;
+        gap: 24px;
+    }
+
+
+    .donate {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .donate-qr {
+        max-width: 300px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .dossier-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .dossier-left {
+        position: static;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 860px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 4px var(--gutter) 12px;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-open .site-nav {
+        display: flex;
+    }
+
+    .site-nav a {
+        padding: 14px 0;
+        font-size: 1.0625rem;
+    }
+
+    .site-nav a + a {
+        border-top: 1px solid var(--line);
+    }
+
+    .site-nav .nav-donate {
+        display: block;
+        font-weight: 600;
+        color: var(--accent);
+    }
+
+    /* Phones and tablets: whole photo on top, fading into the text */
+    .hero,
+    .home .hero {
+        display: block;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .hero-media {
+        position: static;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-position: center 60%;
+    }
+
+    .hero-scrim {
+        bottom: auto;
+        aspect-ratio: 4 / 3;
+        background: linear-gradient(180deg, rgba(26, 26, 26, 0) 62%, rgba(26, 26, 26, 0.7) 82%, var(--dark) 100%);
+    }
+
+    .hero-inner {
+        margin-top: -44px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --gutter: 20px;
+        --header-h: 60px;
+    }
+
+    .section {
+        padding: 64px 0;
+    }
+
+    .hero-title span {
+        display: inline;
+    }
+
+    :lang(zh-CN) .hero-title span {
+        display: block;
+    }
+
+    .hero-lede {
+        font-size: 1.0625rem;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 auto;
+    }
+
+    .header-actions .btn {
+        display: none;
+    }
+
+    .event-grid,
+    .plans {
+        grid-template-columns: 1fr;
+    }
+
+    .child-grid {
+        gap: 32px 16px;
+    }
+
+    .child p:not(.child-meta) {
+        display: none;
+    }
+
+    .profile-row {
+        grid-template-columns: 96px 1fr;
+        gap: 18px;
+        padding: 24px 0;
+    }
+
+    .profile-facts {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .plans {
+        gap: 40px;
+    }
+
+
+    .numbers dd {
+        font-size: 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 48px 0 36px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .page-head {
+        padding-top: 44px;
+    }
+
+    .report {
+        grid-template-columns: 96px 1fr;
+        gap: 20px;
+    }
+
+    .donation-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media print {
+    .site-header,
+    .site-footer,
+    .back-link,
+    .hero-media,
+    .hero-scrim {
+        display: none;
+    }
+
+    .hero {
+        min-height: 0;
+        color: var(--ink);
+        background: none;
+    }
+}
