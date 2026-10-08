@@ -62,16 +62,6 @@ function initHeaderScroll() {
     window.addEventListener('scroll', update, { passive: true });
 }
 
-// Copy contact email
-function copyEmail(btn) {
-    navigator.clipboard.writeText('contact@h2h.ykps.net').then(() => {
-        btn.textContent = currentLang() === 'zh' ? '已复制' : 'Copied';
-        setTimeout(() => {
-            btn.textContent = btn.getAttribute(`data-${currentLang()}`);
-        }, 2000);
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     initLanguage();
     initMenu();
