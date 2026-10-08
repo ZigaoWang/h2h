@@ -184,3 +184,186 @@ button {
     background: rgba(255, 255, 255, 0.12);
 }
 
+/* Header
+   ========================================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: var(--header-h);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.brand img {
+    width: 34px;
+    height: 34px;
+}
+
+.brand-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+.brand-light .brand-name {
+    color: #fff;
+}
+
+.site-nav {
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+}
+
+.site-nav a {
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+}
+
+.site-nav a:hover {
+    color: var(--ink);
+}
+
+.site-nav a[aria-current="page"] {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.site-nav .nav-donate {
+    display: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.lang-btn {
+    padding: 4px 6px;
+    border: 0;
+    background: none;
+    color: var(--muted);
+}
+
+.lang-btn + .lang-btn {
+    border-left: 1px solid var(--line);
+}
+
+.lang-btn:hover {
+    color: var(--ink);
+}
+
+.lang-btn.active {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.menu-toggle {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: -8px;
+    border: 0;
+    background: none;
+}
+
+.menu-toggle span {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 2px;
+    background: var(--ink);
+}
+
+.menu-toggle span:first-child { top: 15px; }
+.menu-toggle span:last-child { top: 23px; }
+
+.nav-open .menu-toggle span:first-child {
+    top: 19px;
+    transform: rotate(45deg);
+}
+
+.nav-open .menu-toggle span:last-child {
+    top: 19px;
+    transform: rotate(-45deg);
+}
+
+/* Footer
+   ========================================================================== */
+
+.site-footer {
+    background: var(--dark);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9375rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 40px;
+    padding: 64px 0 48px;
+}
+
+.footer-brand p {
+    max-width: 34ch;
+    margin-top: 14px;
+}
+
+.footer-col h2 {
+    font-size: 0.875rem;
+    color: #fff;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+}
+
+.footer-col ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col li + li {
+    margin-top: 8px;
+}
+
+.footer-col a:hover,
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.75);
+}
+

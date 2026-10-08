@@ -6,40 +6,33 @@
     <title>Heart to Heart - YK Pao School</title>
     <meta name="description" content="Heart to Heart charity initiative at YK Pao School, supporting children with congenital heart disease through community fundraising and charity sales.">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/logo-mark.png">
 </head>
 <body>
-    <header class="header">
-        <nav class="main-nav">
-            <div class="container">
-                <div class="nav-content">
-                    <a href="index.html" class="logo">
-                        <div class="logo-icon"><img src="images/logo.png" alt="Heart to Heart Logo" /></div>
-                        <div class="logo-text">
-                            <h1 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h1>
-                            <span class="subtitle" data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
-                        </div>
-                    </a>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" data-en="Home" data-zh="首页">Home</a></li>
-                        <li><a href="#portfolio" data-en="Portfolio" data-zh="档案">Portfolio</a></li>
-                        <li><a href="reports/" data-en="Donor Relations" data-zh="捐赠者关系">Donor Relations</a></li>
-                        <li><a href="#contact" data-en="Get Involved" data-zh="参与其中">Get Involved</a></li>
-                    </ul>
-                    <div class="header-right">
-                        <div class="language-toggle">
-                            <button class="lang-btn active" data-lang="en">EN</button>
-                            <button class="lang-btn" data-lang="zh">中文</button>
-                        </div>
-                    </div>
-                    <button class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="./" class="brand">
+                <img src="images/logo-mark.png" alt="" width="34" height="34" />
+                <span class="brand-name" data-en="Heart to Heart" data-zh="心连心">Heart to Heart</span>
+            </a>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <a href="#about" data-en="About" data-zh="关于我们">About</a>
+                <a href="children/" data-en="Children" data-zh="孩子们">Children</a>
+                <a href="#events" data-en="Events" data-zh="活动">Events</a>
+                <a href="reports/" data-en="Reports" data-zh="报告">Reports</a>
+                <a href="#contact" class="nav-donate" data-en="Donate" data-zh="捐款">Donate</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-toggle" role="group" aria-label="Language">
+                    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="zh">中文</button>
                 </div>
+                <a href="#contact" class="btn btn-primary btn-sm" data-en="Donate" data-zh="捐款">Donate</a>
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <span></span><span></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
@@ -670,56 +663,43 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <a href="index.html" class="footer-logo">
-                        <div class="logo-icon"><img src="images/logo.png" alt="Heart to Heart Logo" /></div>
-                        <div class="logo-text">
-                            <h3 data-en="Heart to Heart" data-zh="心连心">Heart to Heart</h3>
-                            <span data-en="YK Pao School" data-zh="包玉刚实验学校">YK Pao School</span>
-                        </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="./" class="brand brand-light">
+                        <img src="images/logo-mark.png" alt="" width="34" height="34" />
+                        <span class="brand-name" data-en="Heart to Heart" data-zh="心连心">Heart to Heart</span>
                     </a>
-                    <p class="footer-mission" data-en="Transforming lives through community support and compassion, one heart at a time." data-zh="通过社区支持和同情心改变生活，一次一颗心。">
-                        Transforming lives through community support and compassion, one heart at a time.
-                    </p>
+                    <p data-en="A student-led charity at YK Pao School, Shanghai, funding heart surgery for children with congenital heart disease." data-zh="上海包玉刚实验学校的学生公益组织，为患有先天性心脏病的儿童资助心脏手术。">A student-led charity at YK Pao School, Shanghai, funding heart surgery for children with congenital heart disease.</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4 data-en="Our Work" data-zh="我们的工作">Our Work</h4>
-                        <ul>
-                            <li><a href="#impact" data-en="Success Stories" data-zh="成功故事">Success Stories</a></li>
-                            <li><a href="#events" data-en="Charity Events" data-zh="慈善活动">Charity Events</a></li>
-                            <li><a href="#about" data-en="Our Mission" data-zh="我们的使命">Our Mission</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4 data-en="Get Involved" data-zh="参与其中">Get Involved</h4>
-                        <ul>
-                            <li><a href="#contact" data-en="Volunteer" data-zh="志愿者">Volunteer</a></li>
-                            <li><a href="#contact" data-en="Donate" data-zh="捐赠">Donate</a></li>
-                            <li><a href="#contact" data-en="Partner With Us" data-zh="与我们合作">Partner With Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4 data-en="Connect" data-zh="联系">Connect</h4>
-                        <ul>
-                            <li><a href="mailto:h2h@ykps.edu.cn" data-en="Email Us" data-zh="给我们发邮件">Email Us</a></li>
-                            <li><a href="#" data-en="WeChat" data-zh="微信">WeChat</a></li>
-                            <li><a href="#" data-en="Follow Updates" data-zh="关注更新">Follow Updates</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-col">
+                    <h2 data-en="Our work" data-zh="我们的工作">Our work</h2>
+                    <ul>
+                        <li><a href="#about" data-en="About us" data-zh="关于我们">About us</a></li>
+                        <li><a href="children/" data-en="The children" data-zh="孩子们">The children</a></li>
+                        <li><a href="#events" data-en="Events" data-zh="活动">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2 data-en="Get involved" data-zh="参与其中">Get involved</h2>
+                    <ul>
+                        <li><a href="#contact" data-en="Donate" data-zh="捐款">Donate</a></li>
+                        <li><a href="#contact" data-en="Partner with us" data-zh="与我们合作">Partner with us</a></li>
+                        <li><a href="reports/" data-en="Reports" data-zh="报告">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2 data-en="Contact" data-zh="联系">Contact</h2>
+                    <ul>
+                        <li><a href="mailto:contact@h2h.ykps.net">contact@h2h.ykps.net</a></li>
+                        <li><a href="#contact" data-en="WeChat donation QR" data-zh="微信捐款二维码">WeChat donation QR</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p data-en="© 2026 Heart to Heart - YK Pao School. Transforming lives with compassion." data-zh="© 2026 心连心 - 包玉刚实验学校。用爱心改变生活。">© 2026 Heart to Heart - YK Pao School. Transforming lives with compassion.</p>
-                    <p class="footer-credit">
-                        <span data-en="Website designed by" data-zh="网站设计者">Website designed by</span>
-                        <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a>
-                    </p>
-                </div>
+                <p data-en="© 2026 Heart to Heart · YK Pao School" data-zh="© 2026 心连心 · 包玉刚实验学校">© 2026 Heart to Heart · YK Pao School</p>
+                <p><span data-en="Website by" data-zh="网站设计">Website by</span> <a href="https://zigao.wang" target="_blank" rel="noopener">Zigao Wang</a></p>
             </div>
         </div>
     </footer>
