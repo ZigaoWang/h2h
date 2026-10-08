@@ -284,73 +284,32 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="contact-background">
-                <img src="images/contact.jpg" alt="Heart to Heart - Make an Impact" />
-                <div class="contact-overlay"></div>
-            </div>
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-logo">
-                        <img src="images/logo.png" alt="Heart to Heart Logo" />
-                    </div>
-                    <h2 class="contact-title" data-en="Join Our Mission" data-zh="加入我们的使命">Join Our Mission</h2>
-                    <p class="contact-subtitle" data-en="Every contribution, no matter the size, brings us closer to saving another child's life" data-zh="每一份贡献，无论大小，都让我们更接近拯救另一个孩子的生命">Every contribution, no matter the size, brings us closer to saving another child's life</p>
-                </div>
-                <div class="contact-message-wrapper">
-                    <div class="donation-layout">
-                        <div class="donation-details">
-                            <div class="donation-label" data-en="WeChat QR Code" data-zh="微信二维码">WeChat QR Code</div>
-                            <h3 class="donation-heading" data-en="Scan to Support" data-zh="扫码支持">Scan to Support</h3>
-                            <p class="contact-message" data-en="Your generosity keeps life-saving surgeries within reach for every child. Contributions of any size make a real impact." data-zh="您的慷慨让每位孩子离救命手术更近一步。无论金额大小都能带来真实改变。">
-                                Your generosity keeps life-saving surgeries within reach for every child. Contributions of any size make a real impact.
-                            </p>
-                            <div class="donation-stats">
-                                <div class="donation-stat">
-                                    <span class="stat-label" data-en="Total Raised" data-zh="已筹金额">Total Raised</span>
-                                    <span class="stat-value">¥155,976.27</span>
-                                </div>
-                                <div class="donation-stat">
-                                    <span class="stat-label" data-en="Donors" data-zh="捐赠人数">Donors</span>
-                                    <span class="stat-value">468</span>
-                                </div>
-                            </div>
-                            <div class="donation-progress" role="region" aria-label="Donation progress">
-                                <div class="progress-header">
-                                    <span class="progress-label" data-en="Goal: ¥200,000" data-zh="目标：¥200,000">Goal: ¥200,000</span>
-                                    <span class="progress-percent">78%</span>
-                                </div>
-                                <div class="progress-track" aria-hidden="true">
-                                    <div class="progress-fill" style="width: 78%;"></div>
-                                </div>
-                                <div class="progress-footer">
-                                    <span data-en="¥44,023.73 remaining" data-zh="剩余 ¥44,023.73">¥44,023.73 remaining</span>
-                                    <span data-en="Data as of Jul 25, 2026" data-zh="数据截至2026年7月25日">Data as of Jul 25, 2026</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="donation-qr-panel">
-                            <div class="qr-card">
-                                <img src="images/donation-qr-code.jpg" alt="WeChat donation QR code" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-email-panel">
-                        <p class="contact-email-note" data-en="For partnerships, corporate gifts, or other enquiries please contact:" data-zh="如需合作、企业捐赠或其他咨询，请联系：">
-                            For partnerships, corporate gifts, or other enquiries please contact:
+        <!-- Donate -->
+        <section id="contact" class="section section-tint">
+            <div class="container donate">
+                <div>
+                    <h2 class="section-title" data-en="Donate" data-zh="捐款">Donate</h2>
+                    <p class="donate-intro" data-en="Scan the QR code with WeChat. Any amount helps, and it all goes towards the next child's surgery." data-zh="使用微信扫描二维码即可捐款。任何金额都有帮助，所有善款都将用于下一个孩子的手术。">Scan the QR code with WeChat. Any amount helps, and it all goes towards the next child's surgery.</p>
+
+                    <div class="progress">
+                        <p class="progress-line">
+                            <strong>¥155,976.27</strong>
+                            <span data-en="raised of our ¥200,000 goal" data-zh="已筹 / 目标 ¥200,000">raised of our ¥200,000 goal</span>
                         </p>
-                        <div class="email-container">
-                            <a href="mailto:contact@h2h.ykps.net" class="contact-email-link">contact@h2h.ykps.net</a>
-                            <button class="copy-email-btn" onclick="copyEmail()" title="Copy email">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                </svg>
-                            </button>
+                        <div class="progress-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="78%">
+                            <div class="progress-fill" style="width: 78%;"></div>
                         </div>
-                        <p class="response-note" data-en="We will respond as soon as possible" data-zh="我们将尽快回复">We will respond as soon as possible</p>
+                        <p class="progress-note" data-en="468 donors · ¥44,023.73 to go · updated Jul 25, 2026" data-zh="468位捐赠者 · 还差 ¥44,023.73 · 更新于2026年7月25日">468 donors · ¥44,023.73 to go · updated Jul 25, 2026</p>
                     </div>
+
+                    <p class="donate-contact">
+                        <span data-en="Partnerships, corporate gifts or anything else:" data-zh="合作、企业捐赠或其他咨询：">Partnerships, corporate gifts or anything else:</span><br>
+                        <a href="mailto:contact@h2h.ykps.net" class="text-link">contact@h2h.ykps.net</a>
+                        <button type="button" class="copy-btn" onclick="copyEmail(this)" data-en="Copy" data-zh="复制">Copy</button>
+                    </p>
+                </div>
+                <div class="donate-qr">
+                    <img src="images/donation-qr-code.jpg" alt="WeChat donation QR code" />
                 </div>
             </div>
         </section>

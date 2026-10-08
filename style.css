@@ -762,6 +762,89 @@ button {
     margin-top: 6px;
 }
 
+/* Donate
+   ========================================================================== */
+
+.donate {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 72px;
+    align-items: center;
+}
+
+.donate-intro {
+    max-width: 50ch;
+    font-size: 1.125rem;
+    color: var(--ink-2);
+}
+
+.progress {
+    margin-top: 32px;
+    max-width: 520px;
+}
+
+.progress-line {
+    margin-bottom: 10px;
+    color: var(--muted);
+}
+
+.progress-line strong {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+    height: 6px;
+    background: #e2ded7;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent);
+}
+
+.progress-note {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.donate-contact {
+    margin-top: 36px;
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+.donate-contact .text-link {
+    font-size: 1rem;
+}
+
+.copy-btn {
+    margin-left: 8px;
+    padding: 2px 8px;
+    border: 1px solid #c9c5be;
+    border-radius: var(--radius);
+    background: none;
+    font-size: 0.8125rem;
+    color: var(--ink-2);
+    vertical-align: 1px;
+}
+
+.copy-btn:hover {
+    border-color: var(--ink);
+}
+
+.donate-qr img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
 /* Footer
    ========================================================================== */
 
