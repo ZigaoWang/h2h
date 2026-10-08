@@ -437,6 +437,39 @@ button {
     gap: 12px;
 }
 
+/* About
+   ========================================================================== */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.about .section-title {
+    margin-bottom: 20px;
+}
+
+.about-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.about-copy p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--ink-2);
+    max-width: 62ch;
+}
+
+.about-copy p + p {
+    margin-top: 16px;
+}
+
+
 /* Footer
    ========================================================================== */
 
