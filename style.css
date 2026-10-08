@@ -769,40 +769,54 @@ button {
 /* Donate
    ========================================================================== */
 
+.donate-band {
+    padding: 112px 0;
+    background: var(--dark);
+    color: #fff;
+}
+
 .donate {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr 320px;
+    gap: 96px;
     align-items: center;
 }
 
-.donate-intro {
-    max-width: 52ch;
-    font-size: 1.125rem;
-    color: var(--ink-2);
+.donate-title {
+    max-width: 16ch;
+    font-size: clamp(2.25rem, 1.6rem + 2.2vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+:lang(zh-CN) .donate-title {
+    line-height: 1.25;
 }
 
 .progress {
     max-width: 560px;
-    margin-top: 40px;
+    margin-top: 48px;
 }
 
-.progress-amount {
-    font-size: clamp(2.25rem, 1.8rem + 1.6vw, 3rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+.progress-line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.125rem;
+}
+
+.progress-line strong {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: #fff;
     font-variant-numeric: tabular-nums;
-}
-
-.progress-sub {
-    margin: 4px 0 16px;
-    color: var(--ink-2);
 }
 
 .progress-track {
     height: 6px;
-    background: #e2ded7;
+    background: rgba(255, 255, 255, 0.14);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -810,38 +824,61 @@ button {
 .progress-fill {
     height: 100%;
     background: var(--accent);
+    border-radius: inherit;
 }
 
-.progress-date {
-    margin-top: 10px;
-    font-size: 0.875rem;
-    color: var(--muted);
+.progress-meta {
+    margin-top: 12px;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .donate-contact {
-    margin-top: 40px;
-    padding-top: 24px;
-    max-width: 560px;
-    border-top: 1px solid #dcd8d1;
+    margin-top: 48px;
     font-size: 0.9375rem;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.donate-qr {
-    justify-self: center;
+.donate-contact a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.35);
+    text-underline-offset: 4px;
+}
+
+.donate-contact a:hover {
+    text-decoration-color: #fff;
+}
+
+.donate-card {
+    padding: 28px 28px 24px;
+    background: #fff;
+    border-radius: 8px;
+    color: var(--ink);
+}
+
+.donate-card img {
+    width: 100%;
+    height: auto;
+}
+
+.donate-card figcaption {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
     text-align: center;
 }
 
-.donate-qr img {
-    width: 220px;
-    height: 220px;
-    mix-blend-mode: multiply;
+.donate-card strong {
+    display: block;
+    font-weight: 600;
 }
 
-.donate-qr figcaption {
-    margin-top: 12px;
-    font-size: 0.9375rem;
-    color: var(--ink-2);
+.donate-card span {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.8125rem;
+    color: var(--muted);
 }
 
 /* Footer
@@ -851,6 +888,11 @@ button {
     background: var(--dark);
     color: rgba(255, 255, 255, 0.65);
     font-size: 0.9375rem;
+}
+
+.donate-band + .site-footer,
+main:has(> .donate-band:last-child) + .site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-grid {
@@ -1177,11 +1219,11 @@ button {
 
     .donate {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 56px;
     }
 
-    .donate-qr {
-        justify-self: start;
+    .donate-card {
+        max-width: 320px;
     }
 
     .footer-grid {
@@ -1279,7 +1321,8 @@ button {
         --header-h: 60px;
     }
 
-    .section {
+    .section,
+    .donate-band {
         padding: 64px 0;
     }
 
