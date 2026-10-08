@@ -1443,9 +1443,62 @@ main:has(> .donate-band:last-child) + .site-footer {
         font-size: 1.75rem;
     }
 
+    /* Reports: cover beside the title, details and buttons full width */
     .report {
-        grid-template-columns: 96px 1fr;
-        gap: 20px;
+        grid-template-columns: 84px 1fr;
+        column-gap: 18px;
+        row-gap: 0;
+        padding: 28px 0;
+    }
+
+    .report-cover {
+        grid-row: 1 / span 3;
+        align-self: center;
+    }
+
+    .report-body {
+        display: contents;
+    }
+
+    .report-kind,
+    .report h2,
+    .report-body > .report-meta {
+        grid-column: 2;
+    }
+
+    .report-kind { grid-row: 1; align-self: end; }
+    .report h2 { grid-row: 2; }
+    .report-body > .report-meta { grid-row: 3; }
+    .report-body > p:not(.report-meta) { grid-row: 4; }
+    .report-actions { grid-row: 5; }
+
+    .report h2 {
+        font-size: 1.1875rem;
+        margin-bottom: 0;
+    }
+
+    .report-body > .report-meta {
+        margin-top: 4px;
+        align-self: start;
+    }
+
+    .report-body > p:not(.report-meta),
+    .report-actions {
+        grid-column: 1 / -1;
+    }
+
+    .report-body > p:not(.report-meta) {
+        margin-top: 16px;
+        max-width: none;
+    }
+
+    .report-actions {
+        flex-direction: column;
+        margin-top: 18px;
+    }
+
+    .report-actions .btn {
+        width: 100%;
     }
 
     .donation-item {
