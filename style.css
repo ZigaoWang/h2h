@@ -901,6 +901,79 @@ button {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Donor relations
+   ========================================================================== */
+
+.page-head {
+    padding: 72px 0 0;
+}
+
+.page-title {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.page-head .lede {
+    max-width: 58ch;
+    font-size: 1.125rem;
+    color: var(--ink-2);
+}
+
+.section-tight {
+    padding: 48px 0 96px;
+}
+
+.report-list {
+    max-width: 900px;
+    border-top: 1px solid var(--line);
+}
+
+.report {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    align-items: start;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.report-cover {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+
+.report-kind {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.report h2 {
+    font-size: 1.375rem;
+    margin-bottom: 8px;
+}
+
+.report-body > p {
+    max-width: 56ch;
+    color: var(--ink-2);
+}
+
+.report-body > .report-meta {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.report-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 /* Children list
    ========================================================================== */
 
