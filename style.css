@@ -878,6 +878,10 @@ button {
     color: var(--muted);
 }
 
+.donate-card .donate-card-hint {
+    display: none;
+}
+
 /* Footer
    ========================================================================== */
 
@@ -1220,7 +1224,7 @@ main:has(> .donate-band:last-child) + .site-footer {
     }
 
     .donate-card {
-        max-width: 320px;
+        max-width: 420px;
     }
 
     .footer-grid {
@@ -1391,6 +1395,52 @@ main:has(> .donate-band:last-child) + .site-footer {
 
     .page-head {
         padding-top: 44px;
+    }
+
+
+    /* Donate: compact card between the numbers and the contact line */
+    .donate {
+        gap: 0;
+    }
+
+    .donate-main {
+        display: contents;
+    }
+
+    .donate-title { order: 1; }
+    .progress { order: 2; margin-top: 32px; }
+    .donate-card { order: 3; }
+    .donate-contact { order: 4; margin-top: 28px; }
+
+    .donate-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        max-width: none;
+        margin-top: 36px;
+        padding: 16px;
+    }
+
+    .donate-card img {
+        width: 120px;
+        flex-shrink: 0;
+    }
+
+    .donate-card figcaption {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: left;
+    }
+
+    .donate-card .donate-card-hint {
+        display: block;
+        margin-top: 8px;
+        color: var(--ink-2);
+    }
+
+    .progress-line strong {
+        font-size: 1.75rem;
     }
 
     .report {
