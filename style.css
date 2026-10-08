@@ -727,6 +727,41 @@ button {
 }
 
 
+/* Plans
+   ========================================================================== */
+
+.plans {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    margin-top: 28px;
+}
+
+.plan-when {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.plan h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.plan > p:not(.plan-when) {
+    color: var(--ink-2);
+    margin-bottom: 14px;
+}
+
+.plan ul {
+    padding-left: 1.1em;
+    color: var(--ink-2);
+}
+
+.plan li + li {
+    margin-top: 6px;
+}
+
 /* Footer
    ========================================================================== */
 
