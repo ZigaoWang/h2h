@@ -1296,17 +1296,18 @@ main:has(> .donate-band:last-child) + .site-footer {
         max-height: none;
     }
 
+    /* Fade the photo itself into the background so there is no seam */
     .hero-media {
         position: static;
         height: auto;
         aspect-ratio: 4 / 3;
         object-position: center 60%;
+        -webkit-mask-image: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0.35) 82%, transparent 100%);
+        mask-image: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0.35) 82%, transparent 100%);
     }
 
     .hero-scrim {
-        bottom: auto;
-        aspect-ratio: 4 / 3;
-        background: linear-gradient(180deg, rgba(26, 26, 26, 0) 62%, rgba(26, 26, 26, 0.7) 82%, var(--dark) 100%);
+        display: none;
     }
 
     .hero-inner {
