@@ -532,6 +532,55 @@ button {
     margin-top: auto;
 }
 
+/* Impact
+   ========================================================================== */
+
+.impact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.impact-photo {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+    border-top: 1px solid var(--line);
+}
+
+.numbers div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.numbers div:nth-child(odd) {
+    padding-right: 24px;
+}
+
+.numbers dd {
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.numbers dt {
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
 /* Footer
    ========================================================================== */
 
