@@ -1439,6 +1439,15 @@ main:has(> .donate-band:last-child) + .site-footer {
         color: var(--ink-2);
     }
 
+    .donate-card .hint-wechat,
+    .in-wechat .donate-card .hint-browser {
+        display: none;
+    }
+
+    .in-wechat .donate-card .hint-wechat {
+        display: block;
+    }
+
     .progress-line strong {
         font-size: 1.75rem;
     }

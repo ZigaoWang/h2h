@@ -2,6 +2,11 @@
 
 document.documentElement.classList.add('js');
 
+// WeChat's in-app browser can open the donation code with a long-press
+if (/MicroMessenger/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add('in-wechat');
+}
+
 function currentLang() {
     return localStorage.getItem('h2h-language') === 'zh' ? 'zh' : 'en';
 }
