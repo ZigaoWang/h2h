@@ -526,3 +526,140 @@ button {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Child profile pages
+   ========================================================================== */
+
+.dossier-container {
+    padding: 36px 0 96px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    font-size: 0.9375rem;
+    color: var(--muted);
+}
+
+.back-link::before {
+    content: "← ";
+}
+
+.back-link:hover {
+    color: var(--ink);
+}
+
+.dossier-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.dossier-left {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+}
+
+.patient-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: var(--radius);
+}
+
+.patient-name {
+    font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+}
+
+.info-section {
+    margin-bottom: 32px;
+}
+
+.info-header {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+
+.info-table td:first-child {
+    width: 38%;
+    color: var(--muted);
+}
+
+.status-badge {
+    font-weight: 600;
+    color: #2b7a4b;
+}
+
+.donation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.donation-date {
+    color: var(--ink-2);
+}
+
+.donation-amount {
+    font-weight: 600;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.total-raised {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 12px;
+}
+
+.total-label {
+    font-weight: 600;
+}
+
+.total-amount {
+    font-size: 1.375rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.story-section {
+    margin-top: 44px;
+}
+
+.story-title {
+    font-size: 1.375rem;
+    margin-bottom: 12px;
+}
+
+.story-section p {
+    max-width: 66ch;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink-2);
+}
+
+.story-section p + p {
+    margin-top: 14px;
+}
+
