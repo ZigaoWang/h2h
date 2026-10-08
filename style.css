@@ -526,6 +526,48 @@ button {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Children list
+   ========================================================================== */
+
+.profile-list {
+    max-width: 960px;
+    border-top: 1px solid var(--line);
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 36px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.profile-row img,
+.profile-row .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: var(--radius);
+}
+
+.profile-row h2 {
+    font-size: 1.5rem;
+}
+
+.profile-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+    margin: 12px 0 18px;
+    max-width: 600px;
+}
+
+.profile-facts dt {
+    font-size: 0.8125rem;
+    color: var(--muted);
+}
+
 /* Child profile pages
    ========================================================================== */
 
