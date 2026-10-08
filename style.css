@@ -480,7 +480,8 @@ button {
 }
 
 .all-link {
-    margin-top: 40px;
+    margin-top: 48px;
+    text-align: center;
 }
 
 .photo-placeholder {
@@ -1356,7 +1357,8 @@ main:has(> .donate-band:last-child) + .site-footer {
         gap: 32px 16px;
     }
 
-    .child p:not(.child-meta) {
+    .child p:not(.child-meta),
+    .child .text-link {
         display: none;
     }
 
