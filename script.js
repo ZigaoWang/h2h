@@ -53,6 +53,15 @@ function initMenu() {
     });
 }
 
+// Homepage header turns solid once the page is scrolled
+function initHeaderScroll() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    const update = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+}
+
 // Copy contact email
 function copyEmail(btn) {
     navigator.clipboard.writeText('contact@h2h.ykps.net').then(() => {
@@ -66,4 +75,5 @@ function copyEmail(btn) {
 document.addEventListener('DOMContentLoaded', () => {
     initLanguage();
     initMenu();
+    initHeaderScroll();
 });

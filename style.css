@@ -311,6 +311,64 @@ button {
     transform: rotate(-45deg);
 }
 
+/* Homepage: header floats over the hero photo until you scroll
+   ========================================================================== */
+
+.home .site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom-color: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.home .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 -64px;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.home .site-header:not(.is-scrolled):not(.nav-open) .brand-name,
+.home .site-header:not(.is-scrolled):not(.nav-open) .site-nav a,
+.home .site-header:not(.is-scrolled):not(.nav-open) .lang-btn.active {
+    color: #fff;
+}
+
+.home .site-header:not(.is-scrolled):not(.nav-open) .lang-btn {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.home .site-header:not(.is-scrolled):not(.nav-open) .lang-btn + .lang-btn {
+    border-left-color: rgba(255, 255, 255, 0.35);
+}
+
+.home .site-header:not(.is-scrolled):not(.nav-open) .menu-toggle span {
+    background: #fff;
+}
+
+.home .site-header.is-scrolled,
+.home .site-header.nav-open {
+    background: #fff;
+    border-bottom-color: var(--line);
+}
+
+.home .site-header.is-scrolled::before,
+.home .site-header.nav-open::before {
+    opacity: 0;
+}
+
+.home .hero {
+    height: 100vh;
+    height: 100svh;
+    min-height: 600px;
+    max-height: 1000px;
+}
+
 /* Hero
    ========================================================================== */
 
