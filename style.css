@@ -669,6 +669,10 @@ button {
     margin-bottom: 28px;
 }
 
+.funding-btn {
+    margin-top: 28px;
+}
+
 .report-covers {
     display: grid;
     grid-template-columns: 1fr 1fr;
